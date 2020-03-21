@@ -24,5 +24,6 @@ module.exports = {
     'react/jsx-one-expression-per-line': ['off'],
     // Allow jsx in .js files
     'react/jsx-filename-extension': ['off'],
+    'react/jsx-wrap-multilines': ['off'],
   },
 };

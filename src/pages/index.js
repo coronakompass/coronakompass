@@ -12,7 +12,7 @@ export default function Index() {
         <Typography variant="h4" component="h1" gutterBottom>
           Willkommen
         </Typography>
-        <Button variant="contained" color="primary" component={Link} naked href="/">
+        <Button variant="contained" color="primary" component={Link} href="/wohin">
           Weiter
         </Button>
       </Box>
