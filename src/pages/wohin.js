@@ -171,11 +171,10 @@ export default function Wohin() {
               }}
               onChange={handleUserInput('birthday')}
             />
-            <TextField
-              label="Anschrift"
-              placeholder="Bitte Straße eingeben"
-              variant="outlined"
-              onChange={handleUserInput('address')}
+            <Search
+              onChange={(event, value /* , reason */) => {
+                handleUserInput('address')({ target: { value } });
+              }}
             />
             <Button
               variant="contained"
@@ -215,7 +214,9 @@ export default function Wohin() {
           </Grid>
 
           <Typography variant="body1" gutterBottom>
-            Seit <strong>{format(start, 'dd.MM.yyyy HH:mm')}</strong> unterwegs zu:
+            Seit <strong>{format(start, 'dd.MM.yyyy HH:mm')}</strong> unterwegs von{' '}
+            {user.address.structured_formatting.main_text},{' '}
+            {user.address.structured_formatting.secondary_text} zu:
           </Typography>
 
           <Grid container alignItems="center" className={classes.grid}>
