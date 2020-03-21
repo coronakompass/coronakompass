@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-has-content, react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';

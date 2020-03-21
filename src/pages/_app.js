@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
@@ -18,7 +19,7 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <React.Fragment>
+      <>
         <Head>
           <title>My page</title>
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
@@ -28,7 +29,7 @@ export default class MyApp extends App {
           <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>
-      </React.Fragment>
+      </>
     );
   }
 }
