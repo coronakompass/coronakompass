@@ -35,6 +35,7 @@ export default function GoogleMaps({ onChange }) {
   const classes = useStyles();
   const [inputValue, setInputValue] = React.useState('');
   const [options, setOptions] = React.useState([]);
+  const [bounds, setBounds] = React.useState();
   const loaded = React.useRef(false);
 
   if (typeof window !== 'undefined' && !loaded.current) {
@@ -53,19 +54,39 @@ export default function GoogleMaps({ onChange }) {
     setInputValue(event.target.value);
   };
 
-  const fetch = React.useMemo(
+  const fetchPlaces = React.useMemo(
     () =>
       throttle((request, callback) => {
+        console.log('REQUEST', request); // eslint-disable-line
         autocompleteService.current.getPlacePredictions(request, callback);
       }, 200),
     [],
   );
 
+  const componentRestrictions = { country: 'de' };
+
+  function currentLocationSuccess(pos) {
+    const lat = Number(pos.coords.latitude);
+    const lon = Number(pos.coords.longitute);
+    const shift = 0.1;
+    setBounds(
+      new window.google.maps.LatLngBounds(
+        new window.google.maps.LatLng(lat - shift, lon - shift),
+        new window.google.maps.LatLng(lat + shift, lon + shift),
+      ),
+    );
+    autocompleteService.current = new window.google.maps.places.AutocompleteService();
+  }
+
+  function currentLocationError() {
+    autocompleteService.current = new window.google.maps.places.AutocompleteService();
+  }
+
   React.useEffect(() => {
     let active = true;
 
     if (!autocompleteService.current && window.google) {
-      autocompleteService.current = new window.google.maps.places.AutocompleteService();
+      navigator.geolocation.getCurrentPosition(currentLocationSuccess, currentLocationError);
     }
     if (!autocompleteService.current) {
       return undefined;
@@ -76,7 +97,7 @@ export default function GoogleMaps({ onChange }) {
       return undefined;
     }
 
-    fetch({ input: inputValue }, (results) => {
+    fetchPlaces({ input: inputValue, bounds, componentRestrictions }, (results) => {
       if (active) {
         setOptions(results || []);
       }
@@ -85,7 +106,7 @@ export default function GoogleMaps({ onChange }) {
     return () => {
       active = false;
     };
-  }, [inputValue, fetch]);
+  }, [inputValue, fetchPlaces]);
 
   return (
     <Autocomplete
