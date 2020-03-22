@@ -48,7 +48,7 @@ export default function Index() {
 
   function requestLocationAccess() {
     const geoOptions = {
-      enableHighAccuracy: true,
+      enableHighAccuracy: false,
       timeout: 2000,
       maximumAge: 60 * 60 * 1000, // 1h
     };

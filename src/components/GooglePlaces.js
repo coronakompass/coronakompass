@@ -86,7 +86,7 @@ export default function GooglePlaces({ onChange, label = 'Add a location', defau
 
     if (!autocompleteService.current && window.google) {
       const geoOptions = {
-        enableHighAccuracy: true,
+        enableHighAccuracy: false,
         timeout: 2000,
         maximumAge: 60 * 60 * 1000, // 1h
       };
