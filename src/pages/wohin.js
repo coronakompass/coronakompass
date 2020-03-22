@@ -3,9 +3,6 @@ import Head from 'next/head';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import WorkIcon from '@material-ui/icons/Work';
-import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
@@ -97,26 +94,6 @@ export default function Wohin() {
             label="Dein Ziel"
           />
         </div>
-        <Typography variant="h6" component="h1" gutterBottom>
-          Häufige Ziele
-        </Typography>
-        <Grid container className={classes.grid} justify="space-between" spacing={1}>
-          <Grid item>
-            <Button variant="contained" color="primary" startIcon={<WorkIcon />} xs={6}>
-              Arbeit
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button variant="contained" color="primary" startIcon={<ShoppingCartIcon />} xs={6}>
-              Einkauf
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button variant="contained" color="primary" startIcon={<LocalHospitalIcon />} xs={6}>
-              Arzt
-            </Button>
-          </Grid>
-        </Grid>
       </Box>
 
       <Grid container justify="flex-end" className={classes.grid}>
