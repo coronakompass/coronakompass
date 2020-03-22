@@ -20,6 +20,10 @@ const useStyles = makeStyles((theme) => ({
   margin: {
     marginBottom: theme.spacing(2),
   },
+  placesContent: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(3),
+  },
   grid: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
@@ -91,13 +95,34 @@ export default function Wohin() {
             <Typography variant="h4" component="h1" gutterBottom>
               Wohin soll’s gehen?
             </Typography>
-            <div className={classes.margin}>
-              <GooglePlaces onChange={handleChange} defaultOptions={recentDestinations} />
+            <Typography variant="body1" paragraph>
+              Jeder gesparte Gang kann Leben retten!
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              Es gibt folgende gute Gründe das Haus zu verlassen:
+            </Typography>
+            <Typography component="ul" paragraph>
+              <Typography component="li">Arbeit</Typography>
+              <Typography component="li">Arztbesuch</Typography>
+              <Typography component="li">Einkauf von Lebensmitteln</Typography>
+              <Typography component="li">Geld abheben</Typography>
+              <Typography component="li">Spazieren, Joggen oder Gassi gehen</Typography>
+              <Typography component="li">Besuch von Familie oder LebensgefährtIn</Typography>
+            </Typography>
+            <Typography variant="body1" paragraph>
+              Wohin soll’s gehen?
+            </Typography>
+            <div className={classes.placesContent}>
+              <GooglePlaces
+                onChange={handleChange}
+                defaultOptions={recentDestinations}
+                label="Dein Ziel"
+              />
             </div>
             <Typography variant="h6" component="h1" gutterBottom>
               Häufige Ziele
             </Typography>
-            <Grid container className={classes.grid} spacing={1}>
+            <Grid container className={classes.grid} justify="space-between" spacing={1}>
               <Grid item>
                 <Button variant="contained" color="primary" startIcon={<WorkIcon />} xs={6}>
                   Arbeit
@@ -119,16 +144,15 @@ export default function Wohin() {
                 </Button>
               </Grid>
             </Grid>
-            <Typography variant="body1" gutterBottom>
-              Bitte beachte, dass jeder gesparte Gang potentiell Leben retten kann. Kannst du bis
-              morgen warten und dann zwei Erledigungen auf einmal durchführen?
-            </Typography>
           </Box>
-          <Box>
-            <Button variant="outlined" color="primary" component={Link} href="/wohin">
-              Mehr infos
-            </Button>
-          </Box>
+
+          <Grid container justify="flex-end" className={classes.grid}>
+            <Grid item>
+              <Button variant="outlined" color="primary" component={Link} href="/wohin">
+                Mehr infos
+              </Button>
+            </Grid>
+          </Grid>
         </>
       )}
       {destination && !start && (
@@ -154,9 +178,13 @@ export default function Wohin() {
             </Grid>
           </Grid>
 
-          <Button variant="contained" color="primary" onClick={() => setStart(new Date())}>
-            Jetzt losgehen
-          </Button>
+          <Grid container justify="flex-end" className={classes.grid}>
+            <Grid item>
+              <Button variant="contained" color="primary" onClick={() => setStart(new Date())}>
+                Jetzt losgehen
+              </Button>
+            </Grid>
+          </Grid>
         </Box>
       )}
       {destination && start && !storedUser && (

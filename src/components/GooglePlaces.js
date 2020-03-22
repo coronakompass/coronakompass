@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function GooglePlaces({ onChange, defaultOptions = [] }) {
+export default function GooglePlaces({ onChange, label = 'Add a location', defaultOptions = [] }) {
   const classes = useStyles();
   const [inputValue, setInputValue] = React.useState('');
   const [options, setOptions] = React.useState([]);
@@ -117,13 +117,7 @@ export default function GooglePlaces({ onChange, defaultOptions = [] }) {
       popupIcon={<SearchIcon />}
       includeInputInList
       renderInput={(params) => (
-        <TextField
-          {...params}
-          label="Add a location"
-          variant="outlined"
-          fullWidth
-          onChange={handleChange}
-        />
+        <TextField {...params} label={label} variant="outlined" fullWidth onChange={handleChange} />
       )}
       onChange={onChange}
       renderOption={(option) => {
