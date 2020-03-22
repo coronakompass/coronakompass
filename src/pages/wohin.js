@@ -16,7 +16,7 @@ import { format } from 'date-fns';
 import { uniqBy } from 'lodash';
 import clsx from 'clsx';
 import Link from '../components/Link';
-import Search from '../components/Search';
+import GooglePlaces from '../components/GooglePlaces';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -102,7 +102,7 @@ export default function Wohin() {
               Wohin soll’s gehen?
             </Typography>
             <div className={classes.margin}>
-              <Search onChange={handleChange} defaultOptions={recentDestinations} />
+              <GooglePlaces onChange={handleChange} defaultOptions={recentDestinations} />
             </div>
             <Typography variant="h6" component="h1" gutterBottom>
               Häufige Ziele
@@ -192,7 +192,7 @@ export default function Wohin() {
               }}
               onChange={handleUserInput('birthday')}
             />
-            <Search
+            <GooglePlaces
               onChange={(event, value /* , reason */) => {
                 handleUserInput('address')({ target: { value } });
               }}
