@@ -13,6 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { format } from 'date-fns';
+import { uniqBy } from 'lodash';
 import clsx from 'clsx';
 import Link from '../components/Link';
 import Search from '../components/Search';
@@ -49,6 +50,7 @@ export default function Wohin() {
     address: '',
   });
   const [storedUser, setStoredUser] = React.useState(null);
+  const [recentDestinations, setRecentDestinations] = useState([]);
 
   useEffect(() => {
     try {
@@ -60,10 +62,29 @@ export default function Wohin() {
     } catch (err) {
       // pass
     }
+
+    try {
+      const localStorageDestinations = localStorage.getItem('destinations');
+      const history = (localStorageDestinations && JSON.parse(localStorageDestinations)) || [];
+      setRecentDestinations(history);
+    } catch (err) {
+      // pass
+    }
   }, []);
 
   function handleChange(event, value /* , reason */) {
     setDestination(value);
+
+    try {
+      const localStorageDestinations = localStorage.getItem('destinations');
+      let history = (localStorageDestinations && JSON.parse(localStorageDestinations)) || [];
+      history.unshift(value);
+      history = uniqBy(history, 'id');
+      localStorage.setItem('destinations', JSON.stringify(history));
+      setRecentDestinations(history);
+    } catch (err) {
+      // pass
+    }
   }
 
   function handleUserInput(prop) {
@@ -81,7 +102,7 @@ export default function Wohin() {
               Wohin soll’s gehen?
             </Typography>
             <div className={classes.margin}>
-              <Search onChange={handleChange} />
+              <Search onChange={handleChange} defaultOptions={recentDestinations} />
             </div>
             <Typography variant="h6" component="h1" gutterBottom>
               Häufige Ziele
@@ -215,8 +236,8 @@ export default function Wohin() {
 
           <Typography variant="body1" gutterBottom>
             Seit <strong>{format(start, 'dd.MM.yyyy HH:mm')}</strong> unterwegs von{' '}
-            {user.address.structured_formatting.main_text},{' '}
-            {user.address.structured_formatting.secondary_text} zu:
+            {storedUser.address.structured_formatting.main_text},{' '}
+            {storedUser.address.structured_formatting.secondary_text} zu:
           </Typography>
 
           <Grid container alignItems="center" className={classes.grid}>

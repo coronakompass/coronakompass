@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function GoogleMaps({ onChange }) {
+export default function GoogleMaps({ onChange, defaultOptions = [] }) {
   const classes = useStyles();
   const [inputValue, setInputValue] = React.useState('');
   const [options, setOptions] = React.useState([]);
@@ -113,7 +113,7 @@ export default function GoogleMaps({ onChange }) {
       id="google-map-demo"
       getOptionLabel={(option) => (typeof option === 'string' ? option : option.description)}
       filterOptions={(x) => x}
-      options={options}
+      options={options.length ? options : defaultOptions}
       autoComplete
       popupIcon={<SearchIcon />}
       includeInputInList
