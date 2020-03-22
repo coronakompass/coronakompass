@@ -1,0 +1,26 @@
+#!/bin/bash -eu
+
+join_by() {
+    set -eu
+    local IFS="$1"
+    shift
+    echo "$*"
+}
+
+VARS=(
+  "PROJECT_ID=${PROJECT_ID}"
+)
+
+gcloud builds submit \
+  --project "${PROJECT_ID}" \
+  --verbosity info \
+  --config "cloudbuild.yaml" .
+
+gcloud run deploy web \
+  --project "${PROJECT_ID}" \
+  --region europe-west1 \
+  --image "gcr.io/${PROJECT_ID}/web" \
+  --memory 256Mi \
+  --concurrency 100 \
+  --set-env-vars "$(join_by ',' "${VARS[@]}")" \
+  --allow-unauthenticated
