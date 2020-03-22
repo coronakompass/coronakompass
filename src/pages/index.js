@@ -39,12 +39,16 @@ export default function Index() {
   }
 
   function requestLocationAccess() {
-    const options = {
+    const geoOptions = {
       enableHighAccuracy: true,
       timeout: 2000,
       maximumAge: 60 * 60 * 1000, // 1h
     };
-    navigator.geolocation.getCurrentPosition(currentLocationSuccess, currentLocationError, options);
+    navigator.geolocation.getCurrentPosition(
+      currentLocationSuccess,
+      currentLocationError,
+      geoOptions,
+    );
   }
 
   return (

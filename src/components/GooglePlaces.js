@@ -85,7 +85,16 @@ export default function GooglePlaces({ onChange, label = 'Add a location', defau
     let active = true;
 
     if (!autocompleteService.current && window.google) {
-      navigator.geolocation.getCurrentPosition(currentLocationSuccess, currentLocationError);
+      const geoOptions = {
+        enableHighAccuracy: true,
+        timeout: 2000,
+        maximumAge: 60 * 60 * 1000, // 1h
+      };
+      navigator.geolocation.getCurrentPosition(
+        currentLocationSuccess,
+        currentLocationError,
+        geoOptions,
+      );
     }
     if (!autocompleteService.current) {
       return undefined;
