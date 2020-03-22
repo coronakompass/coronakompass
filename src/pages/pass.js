@@ -5,6 +5,8 @@ import Container from '@material-ui/core/Container';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import PersonIcon from '@material-ui/icons/Person';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import HomeIcon from '@material-ui/icons/Home';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -15,13 +17,20 @@ import Footer from '../components/Footer';
 import Link from '../components/Link';
 
 const useStyles = makeStyles((theme) => ({
-  grid: {
+  person: {
     marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(4),
+  },
+  grid: {
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(2),
   },
   icon: {
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.primary,
     marginRight: theme.spacing(2),
+  },
+  buttons: {
+    marginTop: theme.spacing(4),
   },
 }));
 
@@ -87,43 +96,57 @@ export default function Pass() {
           Zurück
         </Button>
 
-        <Grid container alignItems="center" className={classes.grid}>
+        <Grid container alignItems="center" className={classes.person}>
           <Grid item>
-            <PersonIcon className={classes.icon} />
+            <PersonIcon className={classes.icon} fontSize="large" />
           </Grid>
           <Grid item xs>
-            <Typography variant="body1" color="textPrimary">
-              {user.name}
-            </Typography>
-            <Typography variant="body2" color="textSecondary">
-              * {user.birthday}
+            <Typography variant="h6">{user.name}</Typography>
+            <Typography variant="body2">* {user.birthday}</Typography>
+          </Grid>
+        </Grid>
+
+        <Typography variant="body1">Start:</Typography>
+        <Grid container alignItems="flex-start" className={classes.grid}>
+          <Grid item>
+            <HomeIcon className={classes.icon} fontSize="small" />
+          </Grid>
+          <Grid item xs>
+            <Typography variant="body1">
+              <strong>{user.address.structured_formatting.main_text}</strong>,{' '}
+              {user.address.structured_formatting.secondary_text}
             </Typography>
           </Grid>
         </Grid>
 
-        <Typography variant="body1" gutterBottom>
-          Seit <strong>{format(start, 'dd.MM.yyyy HH:mm')}</strong> unterwegs von{' '}
-          {user.address.structured_formatting.main_text},{' '}
-          {user.address.structured_formatting.secondary_text} zu:
-        </Typography>
-
-        <Grid container alignItems="center" className={classes.grid}>
+        <Typography variant="body1">Ziel:</Typography>
+        <Grid container alignItems="flex-start" className={classes.grid}>
           <Grid item>
-            <ShoppingCartIcon className={classes.icon} />
+            <ShoppingCartIcon className={classes.icon} fontSize="small" />
           </Grid>
           <Grid item xs>
-            <Typography variant="body1" color="textPrimary">
-              {destination.structured_formatting.main_text}
-            </Typography>
-            <Typography variant="body2" color="textSecondary">
+            <Typography variant="body1">
+              <strong>{destination.structured_formatting.main_text}</strong>,{' '}
               {destination.structured_formatting.secondary_text}
             </Typography>
           </Grid>
         </Grid>
 
-        <Grid container justify="flex-end" className={classes.grid}>
+        <Typography variant="body1">Unterwegs seit:</Typography>
+        <Grid container alignItems="flex-start" className={classes.grid}>
           <Grid item>
-            <Button variant="outlined" color="primary" onClick={cancelRoute}>
+            <AccessTimeIcon className={classes.icon} fontSize="small" />
+          </Grid>
+          <Grid item xs>
+            <Typography variant="body1">
+              <strong> {format(start, 'dd.MM.yyyy HH:mm')}</strong>
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <Grid container justify="center" className={classes.buttons}>
+          <Grid item>
+            <Button variant="contained" color="primary" onClick={cancelRoute}>
               Route beenden
             </Button>
           </Grid>
