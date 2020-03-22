@@ -13,6 +13,7 @@ import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import Footer from '../components/Footer';
 import Link from '../components/Link';
+import GoogleMap from '../components/GoogleMap';
 import placeTypes from '../placeTypes';
 
 const useStyles = makeStyles((theme) => ({
@@ -48,20 +49,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.error.light,
   },
 }));
-
-function map(destination) {
-  return (
-    <iframe
-      width="100%"
-      height="300"
-      title="Map"
-      frameBorder="0"
-      style={{ border: 0 }}
-      src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBPCJ-2CAlOsWYr5BXrqD6QRFgmgmIx89Y&q=place_id:${destination.place_id}`}
-      allowFullScreen
-    />
-  );
-}
 
 export default function Ziel() {
   const classes = useStyles();
@@ -125,7 +112,7 @@ export default function Ziel() {
                 immer einen Mindestabstand von 1,5m von anderen Personen zu halten.
               </Typography>
             </Box>
-            {map(destination)}
+            <GoogleMap destination={destination} />
             <Grid container justify="flex-end" className={classes.buttonContainer}>
               <Grid item>
                 <Button variant="contained" color="primary" onClick={startNow}>
@@ -143,7 +130,7 @@ export default function Ziel() {
                 kann. Bitte erkundige dich sicherheitshalber bevor du das Haus verlässt.
               </Typography>
             </Box>
-            {map(destination)}
+            <GoogleMap destination={destination} />
             <Grid container justify="flex-end" className={classes.buttonContainer}>
               <Grid item>
                 <Button

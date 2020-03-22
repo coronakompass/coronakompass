@@ -14,6 +14,7 @@ import { format } from 'date-fns';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 import Link from '../components/Link';
+import GoogleMap from '../components/GoogleMap';
 import placeTypes from '../placeTypes';
 
 const useStyles = makeStyles((theme) => ({
@@ -148,6 +149,8 @@ export default function Pass() {
             </Typography>
           </Grid>
         </Grid>
+
+        <GoogleMap origin={user.address} destination={destination} />
 
         <Grid container justify="center" className={classes.buttons}>
           <Grid item>
