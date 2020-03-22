@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
+import Footer from '../components/Footer';
 import Link from '../components/Link';
 import GooglePlaces from '../components/GooglePlaces';
 
@@ -119,6 +120,7 @@ export default function Wohin() {
           </Grid>
         </form>
       </Box>
+      <Footer />
     </Container>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Alert from '@material-ui/lab/Alert';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -6,6 +7,7 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
+import Footer from '../components/Footer';
 import Link from '../components/Link';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,6 +15,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   buttonContainer: {
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(3),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -20,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       flex: '0 0 auto',
     },
+  },
+  logoCoronaKompass: {
+    marginBottom: theme.spacing(2),
+    width: '100%',
   },
 }));
 
@@ -53,10 +61,15 @@ export default function Index() {
 
   return (
     <Container maxWidth="sm">
-      <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          $NAME
-        </Typography>
+      <Head>
+        <title>Corona Kompass</title>
+      </Head>
+      <Box my={2}>
+        <img
+          src="/logo-coronakompass.svg"
+          alt="Corona Kompass Logo"
+          className={classes.logoCoronaKompass}
+        />
         <Typography variant="body1" paragraph>
           Papierlos dokumentieren, wann und warum du deine Wohnung verlässt.
         </Typography>
@@ -87,12 +100,13 @@ export default function Index() {
             Weiter ohne Standortfreigabe
           </Button>
         </Box>
-        <Typography variant="body2" paragraph>
+        <Typography variant="body2" color="textSecondary" paragraph>
           * Es werden dabei Standortdaten an Google Maps Server gesendet. Alle persönlichen Daten
           werden aber nur auf deinem Endgerät gespeichert, und niemals ohne dein Einverständnis an
           Dritte übermittelt.
         </Typography>
       </Box>
+      <Footer />
     </Container>
   );
 }

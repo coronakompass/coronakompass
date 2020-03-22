@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
+import Footer from '../components/Footer';
 import Link from '../components/Link';
 
 const useStyles = makeStyles((theme) => ({
@@ -76,6 +77,7 @@ export default function Ziel() {
           </Grid>
         </Grid>
       </Box>
+      <Footer />
     </Container>
   );
 }

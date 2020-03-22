@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
@@ -10,6 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { uniqBy } from 'lodash';
 import { useRouter } from 'next/router';
+import Footer from '../components/Footer';
 import Link from '../components/Link';
 import GooglePlaces from '../components/GooglePlaces';
 
@@ -64,65 +66,67 @@ export default function Wohin() {
 
   return (
     <Container maxWidth="sm">
-      <>
-        <Box my={4}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Wohin soll’s gehen?
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Jeder gesparte Gang kann Leben retten!
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            Es gibt folgende gute Gründe das Haus zu verlassen:
-          </Typography>
-          <Typography component="ul" paragraph>
-            <Typography component="li">Arbeit</Typography>
-            <Typography component="li">Arztbesuch</Typography>
-            <Typography component="li">Einkauf von Lebensmitteln</Typography>
-            <Typography component="li">Geld abheben</Typography>
-            <Typography component="li">Spazieren, Joggen oder Gassi gehen</Typography>
-            <Typography component="li">Besuch von Familie oder LebensgefährtIn</Typography>
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Wohin soll’s gehen?
-          </Typography>
-          <div className={classes.placesContent}>
-            <GooglePlaces
-              onChange={handleChange}
-              defaultOptions={recentDestinations}
-              label="Dein Ziel"
-            />
-          </div>
-          <Typography variant="h6" component="h1" gutterBottom>
-            Häufige Ziele
-          </Typography>
-          <Grid container className={classes.grid} justify="space-between" spacing={1}>
-            <Grid item>
-              <Button variant="contained" color="primary" startIcon={<WorkIcon />} xs={6}>
-                Arbeit
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button variant="contained" color="primary" startIcon={<ShoppingCartIcon />} xs={6}>
-                Einkauf
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button variant="contained" color="primary" startIcon={<LocalHospitalIcon />} xs={6}>
-                Arzt
-              </Button>
-            </Grid>
-          </Grid>
-        </Box>
-
-        <Grid container justify="flex-end" className={classes.grid}>
+      <Head>
+        <title>Wohin soll’s gehen? – Corona Kompass</title>
+      </Head>
+      <Box my={4}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Wohin soll’s gehen?
+        </Typography>
+        <Typography variant="body1" paragraph>
+          Jeder gesparte Gang kann Leben retten!
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          Es gibt folgende gute Gründe das Haus zu verlassen:
+        </Typography>
+        <Typography component="ul" paragraph>
+          <Typography component="li">Arbeit</Typography>
+          <Typography component="li">Arztbesuch</Typography>
+          <Typography component="li">Einkauf von Lebensmitteln</Typography>
+          <Typography component="li">Geld abheben</Typography>
+          <Typography component="li">Spazieren, Joggen oder Gassi gehen</Typography>
+          <Typography component="li">Besuch von Familie oder LebensgefährtIn</Typography>
+        </Typography>
+        <Typography variant="body1" paragraph>
+          Wohin soll’s gehen?
+        </Typography>
+        <div className={classes.placesContent}>
+          <GooglePlaces
+            onChange={handleChange}
+            defaultOptions={recentDestinations}
+            label="Dein Ziel"
+          />
+        </div>
+        <Typography variant="h6" component="h1" gutterBottom>
+          Häufige Ziele
+        </Typography>
+        <Grid container className={classes.grid} justify="space-between" spacing={1}>
           <Grid item>
-            <Button variant="outlined" color="primary" component={Link} href="/wohin">
-              Mehr infos
+            <Button variant="contained" color="primary" startIcon={<WorkIcon />} xs={6}>
+              Arbeit
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button variant="contained" color="primary" startIcon={<ShoppingCartIcon />} xs={6}>
+              Einkauf
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button variant="contained" color="primary" startIcon={<LocalHospitalIcon />} xs={6}>
+              Arzt
             </Button>
           </Grid>
         </Grid>
-      </>
+      </Box>
+
+      <Grid container justify="flex-end" className={classes.grid}>
+        <Grid item>
+          <Button variant="outlined" color="primary" component={Link} href="/wohin">
+            Mehr infos
+          </Button>
+        </Grid>
+      </Grid>
+      <Footer />
     </Container>
   );
 }

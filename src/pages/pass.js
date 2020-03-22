@@ -11,6 +11,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import { format } from 'date-fns';
 import { useRouter } from 'next/router';
+import Footer from '../components/Footer';
 import Link from '../components/Link';
 
 const useStyles = makeStyles((theme) => ({
@@ -128,6 +129,7 @@ export default function Pass() {
           </Grid>
         </Grid>
       </Box>
+      <Footer />
     </Container>
   );
 }
