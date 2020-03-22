@@ -125,6 +125,7 @@ export default function GooglePlaces({ onChange, label = 'Add a location', defau
       filterOptions={(x) => x}
       options={options.length ? options : defaultOptions}
       autoComplete
+      noOptionsText="Keine passenden Orte gefunden"
       popupIcon={<SearchIcon />}
       includeInputInList
       renderInput={(params) => (
