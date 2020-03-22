@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
@@ -34,19 +35,28 @@ const useStyles = makeStyles((theme) => ({
 export default function Index() {
   const classes = useStyles();
   const router = useRouter();
+  const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState();
 
   function currentLocationSuccess() {
     router.push('/wohin');
   }
 
-  function currentLocationError() {
-    setError(
-      'Leider konnten wir nicht auf deinen aktuelle Position zugreifen. Probier’s doch einfach ohne Standortfreigabe.',
-    );
+  function currentLocationError(err) {
+    console.error('geolocation.getCurrentPosition error', err); // eslint-disable-line
+    if (err.code === 1 /* PERMISSION_DENIED */ || err.code === 2 /* POSITION_UNAVAILABLE */) {
+      setError(
+        'Leider konnten wir nicht auf deinen aktuelle Position zugreifen. Probier’s doch einfach ohne Standortfreigabe.',
+      );
+      setLoading(false);
+    } else {
+      router.push('/wohin');
+    }
   }
 
   function requestLocationAccess() {
+    setLoading(true);
+
     const geoOptions = {
       enableHighAccuracy: false,
       timeout: 2000,
@@ -57,6 +67,10 @@ export default function Index() {
       currentLocationError,
       geoOptions,
     );
+  }
+
+  if (loading) {
+    return <LinearProgress />;
   }
 
   return (

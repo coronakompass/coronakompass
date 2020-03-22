@@ -74,11 +74,10 @@ export default function GooglePlaces({ onChange, label = 'Add a location', defau
         new window.google.maps.LatLng(lat + shift, lon + shift),
       ),
     );
-    autocompleteService.current = new window.google.maps.places.AutocompleteService();
   }
 
-  function currentLocationError() {
-    autocompleteService.current = new window.google.maps.places.AutocompleteService();
+  function currentLocationError(err) {
+    console.error('geolocation.getCurrentPosition error', err); // eslint-disable-line
   }
 
   React.useEffect(() => {
@@ -95,6 +94,7 @@ export default function GooglePlaces({ onChange, label = 'Add a location', defau
         currentLocationError,
         geoOptions,
       );
+      autocompleteService.current = new window.google.maps.places.AutocompleteService();
     }
     if (!autocompleteService.current) {
       return undefined;
