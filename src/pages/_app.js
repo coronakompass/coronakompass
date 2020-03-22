@@ -18,6 +18,11 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
+    const { href } = window.location;
+    if (href.startsWith('https://www.')) {
+      window.location.href = href.replace(/^https:\/\/www./, 'https://');
+    }
+
     return (
       <>
         <Head>
