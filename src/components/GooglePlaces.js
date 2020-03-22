@@ -67,7 +67,7 @@ export default function GooglePlaces({ onChange, label = 'Add a location', defau
   function currentLocationSuccess(pos) {
     console.log('geolocation.getCurrentPosition position', pos); // eslint-disable-line
     const lat = Number(pos.coords.latitude);
-    const lon = Number(pos.coords.longitute);
+    const lon = Number(pos.coords.longitude);
     const shift = 0.1;
     setBounds(
       new window.google.maps.LatLngBounds(
