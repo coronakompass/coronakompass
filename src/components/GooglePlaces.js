@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     marginRight: theme.spacing(2),
   },
+  popupIndicatorOpen: {
+    transform: 'rotate(0deg)',
+  },
 }));
 
 export default function GooglePlaces({ onChange, label = 'Add a location', defaultOptions = [] }) {
@@ -131,6 +134,9 @@ export default function GooglePlaces({ onChange, label = 'Add a location', defau
       renderInput={(params) => (
         <TextField {...params} label={label} variant="outlined" fullWidth onChange={handleChange} />
       )}
+      classes={{
+        popupIndicatorOpen: classes.popupIndicatorOpen,
+      }}
       onChange={onChange}
       renderOption={(option) => {
         const matches = option.structured_formatting.main_text_matched_substrings;
