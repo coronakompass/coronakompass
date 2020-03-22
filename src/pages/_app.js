@@ -49,8 +49,11 @@ export default class MyApp extends App {
           <meta property="og:url" content="https://coronakompass-app.de/" />
           <meta property="og:title" content="Corona Kompass" />
           <meta property="og:type" content="website" />
-          <meta property="og:description" content="FIXME" />
-          <meta property="og:image" content="https://coronakompass-app.de/opengraphimage.jpg" />
+          <meta
+            property="og:description"
+            content="Die Corona Kompass App ermöglicht papier- und kontaktlose Kontrolle von Ausgangssperren."
+          />
+          <meta property="og:image" content="https://coronakompass-app.de/fb-opengraph.png" />
         </Head>
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
