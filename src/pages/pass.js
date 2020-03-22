@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import PersonIcon from '@material-ui/icons/Person';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
@@ -15,6 +14,7 @@ import { format } from 'date-fns';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 import Link from '../components/Link';
+import placeTypes from '../placeTypes';
 
 const useStyles = makeStyles((theme) => ({
   person: {
@@ -89,6 +89,11 @@ export default function Pass() {
     return <LinearProgress />;
   }
 
+  const primaryType = destination.types[0];
+  const status = placeTypes[primaryType];
+  const DestinationIcon = status.Icon;
+  console.log('destination', destination, status); // eslint-disable-line
+
   return (
     <Container maxWidth="sm">
       <Box my={4}>
@@ -122,7 +127,7 @@ export default function Pass() {
         <Typography variant="body1">Ziel:</Typography>
         <Grid container alignItems="flex-start" className={classes.grid}>
           <Grid item>
-            <ShoppingCartIcon className={classes.icon} fontSize="small" />
+            <DestinationIcon className={classes.icon} fontSize="small" />
           </Grid>
           <Grid item xs>
             <Typography variant="body1">
