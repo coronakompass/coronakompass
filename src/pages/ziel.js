@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   checkIcon: {
     marginLeft: theme.spacing(1),
-    color: theme.palette.success.dark,
+    color: theme.palette.success.main,
   },
   yay: {
     marginTop: theme.spacing(4),
