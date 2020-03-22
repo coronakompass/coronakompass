@@ -57,7 +57,6 @@ export default function GoogleMaps({ onChange, defaultOptions = [] }) {
   const fetchPlaces = React.useMemo(
     () =>
       throttle((request, callback) => {
-        console.log('REQUEST', request); // eslint-disable-line
         autocompleteService.current.getPlacePredictions(request, callback);
       }, 200),
     [],
@@ -106,7 +105,7 @@ export default function GoogleMaps({ onChange, defaultOptions = [] }) {
     return () => {
       active = false;
     };
-  }, [inputValue, fetchPlaces]);
+  }, [inputValue, fetchPlaces, autocompleteService.current]);
 
   return (
     <Autocomplete
