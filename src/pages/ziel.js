@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
   yay: {
     backgroundColor: theme.palette.success.light,
   },
+  unknown: {
+    backgroundColor: theme.palette.warning.light,
+  },
   nay: {
     backgroundColor: theme.palette.error.light,
   },
@@ -90,7 +93,9 @@ export default function Ziel() {
           <Grid item xs>
             <Typography variant="h6">
               {destination.structured_formatting.main_text}
-              {status.open && <CheckIcon className={classes.checkIcon} fontSize="inherit" />}
+              {status.open === true && (
+                <CheckIcon className={classes.checkIcon} fontSize="inherit" />
+              )}
             </Typography>
             <Typography variant="body2">
               {destination.structured_formatting.secondary_text}
@@ -98,7 +103,7 @@ export default function Ziel() {
           </Grid>
         </Grid>
 
-        {status.open && (
+        {status.open === true && (
           <>
             <Box className={clsx(classes.status, classes.yay)}>
               <Typography variant="body1">
@@ -117,7 +122,30 @@ export default function Ziel() {
             </Grid>
           </>
         )}
-        {!status.open && (
+        {status.open === null && (
+          <>
+            <Box className={clsx(classes.status, classes.unknown)}>
+              <Typography variant="body1">
+                Leider haben wir derzeit keine Information, ob das gesuchte Ziel besucht werden
+                kann. Bitte erkundige dich sicherheitshalber bevor du das Haus verlässt.
+              </Typography>
+            </Box>
+            <Grid container justify="flex-end" className={classes.buttonContainer}>
+              <Grid item>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  href={`https://www.google.com/maps/place/?q=place_id:${destination.place_id}`}
+                  target="_blank"
+                  endIcon={<CallMadeIcon />}
+                >
+                  Jetzt erkundigen
+                </Button>
+              </Grid>
+            </Grid>
+          </>
+        )}
+        {status.open === false && (
           <>
             <Box className={clsx(classes.status, classes.nay)}>
               <Typography variant="body1">
