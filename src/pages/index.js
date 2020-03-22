@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 import Link from '../components/Link';
+import Logo from '../components/Logo';
 
 const useStyles = makeStyles((theme) => ({
   marginBottom: {
@@ -25,10 +26,6 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       flex: '0 0 auto',
     },
-  },
-  logoCoronaKompass: {
-    marginBottom: theme.spacing(2),
-    width: '100%',
   },
 }));
 
@@ -80,11 +77,7 @@ export default function Index() {
         <title>Corona Kompass</title>
       </Head>
       <Box my={2}>
-        <img
-          src="/logo-coronakompass.svg"
-          alt="Corona Kompass Logo"
-          className={classes.logoCoronaKompass}
-        />
+        <Logo />
         <Typography variant="body1" paragraph>
           Papierlos dokumentieren, wann und warum du deine Wohnung verlässt.
         </Typography>

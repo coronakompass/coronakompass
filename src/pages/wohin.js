@@ -98,7 +98,7 @@ export default function Wohin() {
 
       <Grid container justify="flex-end" className={classes.grid}>
         <Grid item>
-          <Button variant="outlined" color="primary" component={Link} href="/wohin">
+          <Button variant="outlined" color="primary" component={Link} href="/info">
             Mehr infos
           </Button>
         </Grid>
