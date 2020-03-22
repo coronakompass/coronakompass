@@ -1,10 +1,11 @@
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import CloseIcon from '@material-ui/icons/Close';
-import RoomIcon from '@material-ui/icons/Room';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import LocalGasStationIcon from '@material-ui/icons/LocalGasStation';
 import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import LocalPharmacyIcon from '@material-ui/icons/LocalPharmacy';
-import LocalGasStationIcon from '@material-ui/icons/LocalGasStation';
-import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import NotListedLocationIcon from '@material-ui/icons/NotListedLocation';
+import RoomIcon from '@material-ui/icons/Room';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { mapValues } from 'lodash';
 
 const placeTypes = {
@@ -148,7 +149,17 @@ const placeTypes = {
   town_square: { open: false },
 };
 
+function fallbackIcon(isOpen) {
+  if (isOpen === true) {
+    return RoomIcon;
+  }
+  if (isOpen === false) {
+    return CloseIcon;
+  }
+  return NotListedLocationIcon;
+}
+
 export default mapValues(placeTypes, (placeType) => ({
-  Icon: placeType.open ? RoomIcon : CloseIcon,
+  Icon: fallbackIcon(placeType.open),
   ...placeType,
 }));
