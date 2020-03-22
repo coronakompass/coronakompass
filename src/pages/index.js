@@ -79,7 +79,8 @@ export default function Index() {
       <Box my={2}>
         <Logo />
         <Typography variant="body1" paragraph>
-          Papierlos dokumentieren, wann und warum du deine Wohnung verlässt.
+          Rausfinden, wo du im Rahmen der Ausgangsbeschränkungen noch hin kannst und Papierlos
+          dokumentieren, wann und warum du deine Wohnung verlässt.
         </Typography>
         <Typography variant="body1" paragraph>
           Der Service funktioniert besser, wenn du ihm erlaubst auf deinen Standort zuzugreifen.*
