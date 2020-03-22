@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Container from '@material-ui/core/Container';
 import WorkIcon from '@material-ui/icons/Work';
 import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
@@ -14,21 +13,12 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { format } from 'date-fns';
 import { uniqBy } from 'lodash';
-import clsx from 'clsx';
 import Link from '../components/Link';
 import GooglePlaces from '../components/GooglePlaces';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
     marginBottom: theme.spacing(2),
-  },
-  favoriteContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    '& > *': {
-      margin: theme.spacing(1),
-    },
   },
   grid: {
     marginTop: theme.spacing(2),
@@ -107,18 +97,28 @@ export default function Wohin() {
             <Typography variant="h6" component="h1" gutterBottom>
               Häufige Ziele
             </Typography>
-            <div className={clsx(classes.margin, classes.favoriteContainer)}>
-              <ButtonGroup
-                variant="contained"
-                color="primary"
-                size="large"
-                aria-label="contained primary button group"
-              >
-                <Button startIcon={<WorkIcon />}>Arbeit</Button>
-                <Button startIcon={<ShoppingCartIcon />}>Einkauf</Button>
-                <Button startIcon={<LocalHospitalIcon />}>Arzt</Button>
-              </ButtonGroup>
-            </div>
+            <Grid container className={classes.grid} spacing={1}>
+              <Grid item>
+                <Button variant="contained" color="primary" startIcon={<WorkIcon />} xs={6}>
+                  Arbeit
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary" startIcon={<ShoppingCartIcon />} xs={6}>
+                  Einkauf
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  startIcon={<LocalHospitalIcon />}
+                  xs={6}
+                >
+                  Arzt
+                </Button>
+              </Grid>
+            </Grid>
             <Typography variant="body1" gutterBottom>
               Bitte beachte, dass jeder gesparte Gang potentiell Leben retten kann. Kannst du bis
               morgen warten und dann zwei Erledigungen auf einmal durchführen?
