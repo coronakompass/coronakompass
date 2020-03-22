@@ -106,7 +106,9 @@ export default function GooglePlaces({ onChange, label = 'Add a location', defau
       return undefined;
     }
 
-    fetchPlaces({ input: inputValue, bounds, componentRestrictions }, (results) => {
+    const placesOptions = { input: inputValue, bounds, componentRestrictions };
+    console.log('placesOptions', placesOptions); // eslint-disable-line
+    fetchPlaces(placesOptions, (results) => {
       if (active) {
         setOptions(results || []);
       }
