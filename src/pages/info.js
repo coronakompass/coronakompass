@@ -24,7 +24,7 @@ export default function Info() {
         <Typography variant="body1" paragraph>
           Mit der Einführung von{' '}
           <a
-            href="https://www.spiegel.de/politik/deutschland/coronavirus-bund-und-laender-verstaendigen-sich-auf-umfangreiches-kontaktverbot-a-03be351e-b344-4aed-9eda-1779b869ca9b"
+            href="https://www.bundesregierung.de/breg-de/themen/coronavirus/besprechung-der-bundeskanzlerin-mit-den-regierungschefinnen-und-regierungschefs-der-laender-1733248"
             target="_blank"
             rel="noopener noreferrer"
           >

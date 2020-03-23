@@ -78,11 +78,15 @@ export default function Wohin() {
         </Typography>
         <Typography component="ul" paragraph>
           <Typography component="li">Arbeit</Typography>
+          <Typography component="li">Notbetreuung der Kinder</Typography>
           <Typography component="li">Arztbesuch</Typography>
-          <Typography component="li">Einkauf von Lebensmitteln</Typography>
-          <Typography component="li">Geld abheben</Typography>
-          <Typography component="li">Spazieren, Joggen oder Gassi gehen</Typography>
-          <Typography component="li">Besuch von Familie oder LebensgefährtIn</Typography>
+          <Typography component="li">Einkauf</Typography>
+          <Typography component="li">Teilnahme an Sitzungen</Typography>
+          <Typography component="li">Erforderlichen Terminen und Prüfungen</Typography>
+          <Typography component="li">
+            Individueller Sport und Bewegung an der frischen Luft
+          </Typography>
+          <Typography component="li">Hilfe für andere</Typography>
         </Typography>
         <Typography variant="body1" paragraph>
           Wohin soll’s gehen?
@@ -99,7 +103,7 @@ export default function Wohin() {
       <Grid container justify="flex-end" className={classes.grid}>
         <Grid item>
           <Button variant="outlined" color="primary" component={Link} href="/info">
-            Mehr infos
+            Mehr Infos
           </Button>
         </Grid>
       </Grid>

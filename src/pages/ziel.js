@@ -150,11 +150,12 @@ export default function Ziel() {
           <>
             <Box className={clsx(classes.status, classes.nay)}>
               <Typography variant="body1">
-                <strong>Spar’ dir den Weg –</strong>
+                <strong>Spar’ dir den Weg</strong>
               </Typography>
               <Typography variant="body1">
-                leider geschlossen: Bis auf weiteres darf dieses Ziel keinen Publikumsverkehr
-                empfangen.
+                {status.text
+                  ? status.text
+                  : 'Bis auf weiteres darf dieses Ziel keinen Publikumsverkehr empfangen.'}
               </Typography>
             </Box>
             <Typography variant="body1">

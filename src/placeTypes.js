@@ -50,7 +50,11 @@ const placeTypes = {
   gas_station: { open: true, Icon: LocalGasStationIcon },
   grocery_or_supermarket: { open: true, Icon: ShoppingCartIcon },
   gym: { open: false },
-  hair_care: { open: false },
+  hair_care: {
+    open: false,
+    text:
+      'Dienstleistungsbetriebe im Bereich der Körperpflege sind wegen erhöhter Ansteckungsgefahr derzeit geschlossen.',
+  },
   hardware_store: { open: true }, // FIXME
   hindu_temple: { open: false },
   home_goods_store: { open: true, Icon: ShoppingCartIcon },
