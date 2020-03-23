@@ -75,7 +75,7 @@ export default function Wohin() {
         <BackButton />
 
         <Typography variant="h4" component="h1" gutterBottom>
-          Deine persönlichen Daten
+          Persönliche Daten
         </Typography>
         <Typography variant="body1" gutterBottom>
           Für eine „Ausgangssperrenbescheinigung“ benötigen wir noch ein paar Informationen von dir.
