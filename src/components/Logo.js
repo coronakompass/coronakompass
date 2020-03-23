@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Logo({ small = false }) {
   const classes = useStyles();
-  console.log('SMALL', small); // eslint-disable-line
   return (
     <Link href="/">
       <a className={clsx(classes.link, small ? classes.small : null)}>
