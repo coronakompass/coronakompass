@@ -8,13 +8,14 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
-import clsx from 'clsx';
-import Footer from '../components/Footer';
-import Link from '../components/Link';
-import GoogleMap from '../components/GoogleMap';
 import AllFacts from '../components/AllFacts';
+import Footer from '../components/Footer';
+import GoogleMap from '../components/GoogleMap';
+import Link from '../components/Link';
+import Logo from '../components/Logo';
 import placeTypes from '../placeTypes';
 
 const useStyles = makeStyles((theme) => ({
@@ -84,7 +85,8 @@ export default function Ziel() {
 
   return (
     <Container maxWidth="sm">
-      <Box my={4}>
+      <Box my={2}>
+        <Logo small />
         <Button startIcon={<ArrowBackIosIcon />} color="primary" component={Link} href="/wohin">
           Zurück
         </Button>

@@ -64,7 +64,7 @@ export default function Wohin() {
 
   return (
     <Container maxWidth="sm">
-      <Box my={4}>
+      <Box my={2}>
         <Button startIcon={<ArrowBackIosIcon />} color="primary" component={Link} href="/ziel">
           Zurück
         </Button>

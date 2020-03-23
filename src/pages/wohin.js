@@ -8,10 +8,11 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { uniqBy } from 'lodash';
 import { useRouter } from 'next/router';
-import Footer from '../components/Footer';
-import Link from '../components/Link';
-import GooglePlaces from '../components/GooglePlaces';
 import AllFacts from '../components/AllFacts';
+import Footer from '../components/Footer';
+import GooglePlaces from '../components/GooglePlaces';
+import Link from '../components/Link';
+import Logo from '../components/Logo';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -70,7 +71,8 @@ export default function Wohin() {
       <Head>
         <title>Wohin soll’s gehen? – Corona Kompass</title>
       </Head>
-      <Box my={4}>
+      <Box my={2}>
+        <Logo small />
         <Typography variant="h4" component="h1" gutterBottom>
           Wohin soll’s gehen?
         </Typography>

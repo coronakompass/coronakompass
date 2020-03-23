@@ -13,8 +13,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { format } from 'date-fns';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
-import Link from '../components/Link';
 import GoogleMap from '../components/GoogleMap';
+import Link from '../components/Link';
+import Logo from '../components/Logo';
 import placeTypes from '../placeTypes';
 
 const useStyles = makeStyles((theme) => ({
@@ -97,7 +98,8 @@ export default function Pass() {
 
   return (
     <Container maxWidth="sm">
-      <Box my={4}>
+      <Box my={2}>
+        <Logo small />
         <Button startIcon={<ArrowBackIosIcon />} color="primary" component={Link} href="/ziel">
           Zurück
         </Button>
