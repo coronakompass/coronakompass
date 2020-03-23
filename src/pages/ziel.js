@@ -111,7 +111,7 @@ export default function Ziel() {
               <Typography variant="body1">
                 {status.text
                   ? status.text
-                  : 'Dieses Ziel hat unseren Informationen zufolge geöffnet. Beachte beim Besuch aber immer einen Mindestabstand von 1,5m von anderen Personen zu halten.'}
+                  : 'Dieses Ziel kann unseren Informationen zufolge besucht werden. Beachte beim Besuch aber immer einen Mindestabstand von 1,5m von anderen Personen zu halten.'}
               </Typography>
               <AllFacts />
             </Box>
