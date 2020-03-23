@@ -136,7 +136,14 @@ export default function Ziel() {
               <AllFacts />
             </Box>
             <GoogleMap destination={destination} />
-            <Grid container justify="flex-end" className={classes.buttonContainer}>
+            <Grid
+              container
+              direction="column"
+              justify="flex-end"
+              alignItems="flex-end"
+              className={classes.buttonContainer}
+              spacing={2}
+            >
               <Grid item>
                 <Button
                   variant="outlined"
@@ -146,6 +153,11 @@ export default function Ziel() {
                   endIcon={<CallMadeIcon />}
                 >
                   Jetzt erkundigen
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary" onClick={startNow}>
+                  Jetzt losgehen
                 </Button>
               </Grid>
             </Grid>
