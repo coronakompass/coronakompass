@@ -14,8 +14,7 @@ import { useRouter } from 'next/router';
 import AllFacts from '../components/AllFacts';
 import Footer from '../components/Footer';
 import GoogleMap from '../components/GoogleMap';
-import Link from '../components/Link';
-import Logo from '../components/Logo';
+import Header from '../components/Header';
 import placeTypes from '../placeTypes';
 
 const useStyles = makeStyles((theme) => ({
@@ -86,8 +85,8 @@ export default function Ziel() {
   return (
     <Container maxWidth="sm">
       <Box my={2}>
-        <Logo small />
-        <Button startIcon={<ArrowBackIosIcon />} color="primary" component={Link} href="/wohin">
+        <Header />
+        <Button startIcon={<ArrowBackIosIcon />} color="primary" onClick={() => router.back()}>
           Zurück
         </Button>
         <Grid container alignItems="center" className={classes.grid}>

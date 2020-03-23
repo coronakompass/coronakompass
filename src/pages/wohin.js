@@ -12,7 +12,7 @@ import AllFacts from '../components/AllFacts';
 import Footer from '../components/Footer';
 import GooglePlaces from '../components/GooglePlaces';
 import Link from '../components/Link';
-import Logo from '../components/Logo';
+import Header from '../components/Header';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -72,7 +72,7 @@ export default function Wohin() {
         <title>Wohin soll’s gehen? – Corona Kompass</title>
       </Head>
       <Box my={2}>
-        <Logo small />
+        <Header />
         <Typography variant="h4" component="h1" gutterBottom>
           Wohin soll’s gehen?
         </Typography>

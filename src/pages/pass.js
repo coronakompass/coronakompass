@@ -14,8 +14,7 @@ import { format } from 'date-fns';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 import GoogleMap from '../components/GoogleMap';
-import Link from '../components/Link';
-import Logo from '../components/Logo';
+import Header from '../components/Header';
 import placeTypes from '../placeTypes';
 
 const useStyles = makeStyles((theme) => ({
@@ -99,8 +98,8 @@ export default function Pass() {
   return (
     <Container maxWidth="sm">
       <Box my={2}>
-        <Logo small />
-        <Button startIcon={<ArrowBackIosIcon />} color="primary" component={Link} href="/ziel">
+        <Header />
+        <Button startIcon={<ArrowBackIosIcon />} color="primary" onClick={() => router.back()}>
           Zurück
         </Button>
 

@@ -9,8 +9,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
-import Link from '../components/Link';
 import GooglePlaces from '../components/GooglePlaces';
+import Header from '../components/Header';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -28,10 +28,15 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     marginRight: theme.spacing(2),
   },
+  currentAddress: {
+    marginTop: -1 * theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
 }));
 
 export default function Wohin() {
   const classes = useStyles();
+  const [user, setUser] = useState({});
   const [formUser, setFormUser] = useState({
     name: '',
     birthday: '',
@@ -44,7 +49,8 @@ export default function Wohin() {
       const localStorageUser = localStorage.getItem('user');
       const parsed = JSON.parse(localStorageUser);
       if (parsed) {
-        router.push('/pass');
+        setUser(parsed);
+        setFormUser(parsed);
       }
     } catch (err) {
       // pass
@@ -59,21 +65,21 @@ export default function Wohin() {
 
   function storeUser() {
     localStorage.setItem('user', JSON.stringify(formUser));
-    router.push('/pass');
+    router.back();
   }
 
   return (
     <Container maxWidth="sm">
       <Box my={2}>
-        <Button startIcon={<ArrowBackIosIcon />} color="primary" component={Link} href="/ziel">
+        <Header />
+        <Button startIcon={<ArrowBackIosIcon />} color="primary" onClick={() => router.back()}>
           Zurück
         </Button>
         <Typography variant="h4" component="h1" gutterBottom>
-          Daten vervollständigen
+          Deine persönlichen Daten
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Für eine offizielle „Ausgangssperrenbescheinigung“ benötigen wir noch ein paar
-          Informationen von dir.
+          Für eine „Ausgangssperrenbescheinigung“ benötigen wir noch ein paar Informationen von dir.
         </Typography>
 
         <form noValidate>
@@ -91,6 +97,7 @@ export default function Wohin() {
                 variant="outlined"
                 fullWidth
                 onChange={handleUserInput('name')}
+                value={formUser.name}
               />
             </Grid>
             <Grid item>
@@ -103,10 +110,21 @@ export default function Wohin() {
                   shrink: true,
                 }}
                 onChange={handleUserInput('birthday')}
+                value={formUser.birthday}
               />
             </Grid>
             <Grid item>
+              {user.address && (
+                <Box className={classes.currentAddress}>
+                  <Typography variant="body1">Aktuelle Adresse:</Typography>
+                  <Typography variant="body1">
+                    <strong>{user.address.structured_formatting.main_text}</strong>,{' '}
+                    {user.address.structured_formatting.secondary_text}
+                  </Typography>
+                </Box>
+              )}
               <GooglePlaces
+                label={user.address ? 'Neue Adresse eingeben' : 'Adresse eingeben'}
                 onChange={(event, value /* , reason */) => {
                   handleUserInput('address')({ target: { value } });
                 }}
