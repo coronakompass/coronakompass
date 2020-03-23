@@ -14,6 +14,7 @@ import clsx from 'clsx';
 import Footer from '../components/Footer';
 import Link from '../components/Link';
 import GoogleMap from '../components/GoogleMap';
+import AllFacts from '../components/AllFacts';
 import placeTypes from '../placeTypes';
 
 const useStyles = makeStyles((theme) => ({
@@ -108,9 +109,11 @@ export default function Ziel() {
           <>
             <Box className={clsx(classes.status, classes.yay)}>
               <Typography variant="body1">
-                Dieses Ziel hat unseren Informationen zufolge geöffnet. Beachte beim Besuch aber
-                immer einen Mindestabstand von 1,5m von anderen Personen zu halten.
+                {status.text
+                  ? status.text
+                  : 'Dieses Ziel hat unseren Informationen zufolge geöffnet. Beachte beim Besuch aber immer einen Mindestabstand von 1,5m von anderen Personen zu halten.'}
               </Typography>
+              <AllFacts />
             </Box>
             <GoogleMap destination={destination} />
             <Grid container justify="flex-end" className={classes.buttonContainer}>
@@ -126,9 +129,11 @@ export default function Ziel() {
           <>
             <Box className={clsx(classes.status, classes.unknown)}>
               <Typography variant="body1">
-                Leider haben wir derzeit keine Information, ob das gesuchte Ziel besucht werden
-                kann. Bitte erkundige dich sicherheitshalber bevor du das Haus verlässt.
+                {status.text
+                  ? status.text
+                  : 'Leider haben wir derzeit keine Information, ob das gesuchte Ziel besucht werden kann. Bitte erkundige dich sicherheitshalber bevor du das Haus verlässt.'}
               </Typography>
+              <AllFacts />
             </Box>
             <GoogleMap destination={destination} />
             <Grid container justify="flex-end" className={classes.buttonContainer}>
@@ -157,6 +162,7 @@ export default function Ziel() {
                   ? status.text
                   : 'Bis auf weiteres darf dieses Ziel keinen Publikumsverkehr empfangen.'}
               </Typography>
+              <AllFacts />
             </Box>
             <Typography variant="body1">
               Die gute Nachricht? Es haben sich kürzlich tausende Menschen überlegt wie man die Zeit

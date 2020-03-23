@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 import Link from '../components/Link';
 import GooglePlaces from '../components/GooglePlaces';
+import AllFacts from '../components/AllFacts';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -27,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     color: theme.palette.text.secondary,
     marginRight: theme.spacing(2),
+  },
+  allfacts: {
+    marginBottom: theme.spacing(2),
   },
 }));
 
@@ -76,7 +80,7 @@ export default function Wohin() {
         <Typography variant="body1" gutterBottom>
           Es gibt folgende gute Gründe das Haus zu verlassen:
         </Typography>
-        <Typography component="ul" paragraph>
+        <Typography component="ul">
           <Typography component="li">Arbeit</Typography>
           <Typography component="li">Notbetreuung der Kinder</Typography>
           <Typography component="li">Arztbesuch</Typography>
@@ -88,6 +92,7 @@ export default function Wohin() {
           </Typography>
           <Typography component="li">Hilfe für andere</Typography>
         </Typography>
+        <AllFacts className={classes.allfacts} />
         <Typography variant="body1" paragraph>
           Wohin soll’s gehen?
         </Typography>

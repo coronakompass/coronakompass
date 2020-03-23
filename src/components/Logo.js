@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
 }));
+
 export default function Logo() {
   const classes = useStyles();
   return (
