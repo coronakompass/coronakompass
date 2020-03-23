@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
@@ -83,6 +84,9 @@ export default function Ziel() {
 
   return (
     <Container maxWidth="sm">
+      <Head>
+        <title>Dein Ziel – Corona Kompass</title>
+      </Head>
       <Box my={2}>
         <Header />
         <BackButton />
