@@ -9,33 +9,122 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { mapValues } from 'lodash';
 
 const placeTypes = {
-  accounting: { open: null },
-  airport: { open: true },
-  amusement_park: { open: false },
-  aquarium: { open: false },
-  art_gallery: { open: false },
+  accounting: {
+    open: null,
+    text:
+      "Viele Steuerberater, Anwälte und Berater arbeiten mittlerweile nur noch mit einer kleinen Belegschaft im Büro, oder sind komplett auf Home-Office umgeschwenkt. Ruf' doch kurz an um sicher zu gehen, dass jemand dort sein wird.",
+  },
+  airport: {
+    open: true,
+    text:
+      'Der Flughafen ist offen, allerdings fallen zur Zeit viele Flüge aus. Wenn du sicher gehen möchtest, dass dein Flug stattfindet, kontaktiere bitte die Fluggesellschaft.',
+  },
+  amusement_park: {
+    open: false,
+    text: 'Freizeitparks sind leider bis auf Weiteres geschlossen.',
+  },
+  aquarium: {
+    open: false,
+    text: 'Freizeitparks sind leider bis auf Weiteres geschlossen.',
+  },
+  art_gallery: {
+    open: false,
+    text: 'Galerien und Museen sind leider bis auf Weiteres geschlossen.',
+  },
   atm: { open: true, Icon: AccountBalanceIcon },
   bakery: { open: true, Icon: ShoppingCartIcon },
-  bank: { open: true, Icon: AccountBalanceIcon },
-  bar: { open: false },
-  beauty_salon: { open: false },
-  bicycle_store: { open: null },
-  book_store: { open: false },
-  bowling_alley: { open: false },
-  bus_station: { open: true },
-  cafe: { open: false },
-  campground: { open: false },
-  car_dealer: { open: false },
-  car_rental: { open: null },
-  car_repair: { open: null },
-  car_wash: { open: null },
-  casino: { open: false },
-  cemetery: { open: true },
-  church: { open: null },
-  city_hall: { open: true },
-  clothing_store: { open: false },
-  convenience_store: { open: true, Icon: ShoppingCartIcon },
-  courthouse: { open: true },
+  bank: {
+    open: true,
+    Icon: AccountBalanceIcon,
+    text:
+      "Einige Banken haben ihre Kapazitäten in der Kundenberatung eingeschränkt oder ganze Fillialen geschlossen. Geldautomaten im Außenbereich sollten aber erreichbar sein. Falls du Beratung wünschst, ruf' am Besten kurz an.",
+  },
+  bar: {
+    open: false,
+    text: 'Bars sind leider bis auf Weiteres geschlossen.',
+  },
+  beauty_salon: {
+    open: false,
+    text:
+      'Frisöre, Barbiere, Nagelstudios und Beauty Salons sind leider bis auf Weiteres geschlossen.',
+  },
+  bicycle_store: {
+    open: null,
+    text:
+      'In den meisten Bundesländern sind Fahrradläden leider geschlossen, einige Läden mit angeschlossener Werkstatt betreiben diese allerdings weiter. Am Besten du rufst kurz an.',
+  },
+  book_store: {
+    open: null,
+    text:
+      'In den meisten Bundesländern sind Buchhandlungen bis auf Weiteres geschlossen, einige Bundesländer erlauben allerdings die Öffnung. Am Besten du rufst kurz an.',
+  },
+  bowling_alley: {
+    open: false,
+    text: 'Bowling-Center sind leider bis auf Weiteres geschlossen.',
+  },
+  bus_station: {
+    open: true,
+    text:
+      'Einige Gemeinden haben den Takt der öffentlichen Verkehrsmittel eingeschränkt, aber früher oder später kommt bestimmt ein Bus!',
+  },
+  cafe: {
+    open: false,
+    text: 'Cafés sind leider bis auf Weiteres geschlossen.',
+  },
+  campground: {
+    open: false,
+    text: 'Campingplätze sind leider bis auf Weiteres geschlossen.',
+  },
+  car_dealer: {
+    open: false,
+    text:
+      "Autohäuser müssen leider schließen, der Werkstattbetrieb ist allerdings in den meisten Bundesländern weiterhin erlaubt. Ruf' am Besten kurz an.",
+  },
+  car_rental: {
+    open: true,
+    text: "Einige Stationen wurden geschlossen. Ruf' am Besten kurz an.",
+  },
+  car_repair: {
+    open: true,
+    text: 'KFZ-Werkstätten dürfen weiterhin geöffnet bleiben.',
+  },
+  car_wash: {
+    open: true,
+    text: '(Auto-) Hygiene ist in diesen Zeiten wichtig, keine Frage!?',
+  },
+  casino: {
+    open: false,
+    text: 'Casinos und Wettbüros sind leider bis auf Weiteres geschlossen.',
+  },
+  cemetery: {
+    open: true,
+    text: 'Friedhöfe sind weiterhin geöffnet.',
+  },
+  church: {
+    open: false,
+    text:
+      'Zur Vermeidung von größeren Menschenansammlungen sind Gottesdienste leider zur Zeit nur via Live-Stream möglich. Für eine stille Andacht sind aber die meisten Gotteshäuser weiterhin geöffnet.',
+  },
+  city_hall: {
+    open: true,
+    text:
+      "Die öffentliche Hand und Verwaltung steht weiterhin zu deiner Verfügung. Neuerdings ist allerdings immer mehr auch ohne persönlichen Kontakt möglich, ruf' am Besten kurz an um dein Anliegen zu klären.",
+  },
+  clothing_store: {
+    open: false,
+    text:
+      'Shopping muss leider derzeit auf das Internet verlagert werden. Oder auf später, falls du deinen Lieblingsladen unterstützen möchtest.',
+  },
+  convenience_store: {
+    open: true,
+    Icon: ShoppingCartIcon,
+    text:
+      'Die Versorgung mit Lebensmitteln und Gütern des alltäglichen Bedarfs wird selbstverständlich weiterhin sicher gestellt. Am Besten du kaufst mit Augenmaß – genügend um nicht morgen erneut einkaufen gehen zu müssen, aber es wäre schön, wenn du von besonders gefragten Waren auch noch etwas übrig lassen würdest.',
+  },
+  courthouse: {
+    open: true,
+    text: '',
+  },
   dentist: { open: true, Icon: LocalHospitalIcon },
   department_store: { open: false },
   doctor: { open: true, Icon: LocalHospitalIcon },
