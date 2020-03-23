@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
+import BackButton from '../components/BackButton';
 import Footer from '../components/Footer';
 import GooglePlaces from '../components/GooglePlaces';
 import Header from '../components/Header';
@@ -72,9 +72,8 @@ export default function Wohin() {
     <Container maxWidth="sm">
       <Box my={2}>
         <Header />
-        <Button startIcon={<ArrowBackIosIcon />} color="primary" onClick={() => router.back()}>
-          Zurück
-        </Button>
+        <BackButton />
+
         <Typography variant="h4" component="h1" gutterBottom>
           Deine persönlichen Daten
         </Typography>

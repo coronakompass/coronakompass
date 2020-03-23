@@ -4,7 +4,6 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import CheckIcon from '@material-ui/icons/Check';
 import CallMadeIcon from '@material-ui/icons/CallMade';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -12,6 +11,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
 import AllFacts from '../components/AllFacts';
+import BackButton from '../components/BackButton';
 import Footer from '../components/Footer';
 import GoogleMap from '../components/GoogleMap';
 import Header from '../components/Header';
@@ -19,7 +19,6 @@ import placeTypes from '../placeTypes';
 
 const useStyles = makeStyles((theme) => ({
   grid: {
-    marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
   },
   buttonContainer: {
@@ -86,9 +85,7 @@ export default function Ziel() {
     <Container maxWidth="sm">
       <Box my={2}>
         <Header />
-        <Button startIcon={<ArrowBackIosIcon />} color="primary" onClick={() => router.back()}>
-          Zurück
-        </Button>
+        <BackButton />
         <Grid container alignItems="center" className={classes.grid}>
           <Grid item>
             <DestinationIcon className={classes.icon} fontSize="large" />

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import PersonIcon from '@material-ui/icons/Person';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import HomeIcon from '@material-ui/icons/Home';
@@ -12,6 +11,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import { format } from 'date-fns';
 import { useRouter } from 'next/router';
+import BackButton from '../components/BackButton';
 import Footer from '../components/Footer';
 import GoogleMap from '../components/GoogleMap';
 import Header from '../components/Header';
@@ -19,7 +19,6 @@ import placeTypes from '../placeTypes';
 
 const useStyles = makeStyles((theme) => ({
   person: {
-    marginTop: theme.spacing(2),
     marginBottom: theme.spacing(4),
   },
   grid: {
@@ -99,9 +98,7 @@ export default function Pass() {
     <Container maxWidth="sm">
       <Box my={2}>
         <Header />
-        <Button startIcon={<ArrowBackIosIcon />} color="primary" onClick={() => router.back()}>
-          Zurück
-        </Button>
+        <BackButton />
 
         <Grid container alignItems="center" className={classes.person}>
           <Grid item>
