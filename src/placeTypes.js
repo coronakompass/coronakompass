@@ -119,49 +119,169 @@ const placeTypes = {
     open: true,
     Icon: ShoppingCartIcon,
     text:
-      'Die Versorgung mit Lebensmitteln und Gütern des alltäglichen Bedarfs wird selbstverständlich weiterhin sicher gestellt. Am Besten du kaufst mit Augenmaß – genügend um nicht morgen erneut einkaufen gehen zu müssen, aber es wäre schön, wenn du von besonders gefragten Waren auch noch etwas übrig lassen würdest.',
+      'Die Versorgung mit Lebensmitteln und Gütern des alltäglichen Bedarfs wird selbstverständlich weiterhin sicher gestellt. Am Besten du kaufst mit Augenmaß – genügend um nicht morgen erneut einkaufen gehen zu müssen. Es wäre aber schön, wenn du von besonders gefragten Waren auch noch etwas übrig lassen würdest.',
   },
   courthouse: {
     open: true,
-    text: '',
+    text:
+      'In Schleswig-Holstein ist der Besucherverkehr zu Gerichten und Staatsanwalten weitestgehend eingeschränkt, aber der Gerichtsbetrieb läuft weiter. Mit Vorladung musst du wohl hin...',
   },
-  dentist: { open: true, Icon: LocalHospitalIcon },
-  department_store: { open: false },
-  doctor: { open: true, Icon: LocalHospitalIcon },
-  drugstore: { open: true, Icon: LocalPharmacyIcon },
-  electrician: { open: null },
-  electronics_store: { open: false },
-  embassy: { open: true },
-  fire_station: { open: true },
-  florist: { open: false },
-  funeral_home: { open: true },
-  furniture_store: { open: false },
-  gas_station: { open: true, Icon: LocalGasStationIcon },
-  grocery_or_supermarket: { open: true, Icon: ShoppingCartIcon },
-  gym: { open: false },
+  dentist: {
+    open: true,
+    Icon: LocalHospitalIcon,
+    text:
+      'Zahnarztpraxen sind regulär geöffnet. Ob du es riskieren kannst, eine Vorsorgeuntersuchung sausen zu lassen, musst du selbst entscheiden.',
+  },
+  department_store: {
+    open: false,
+    text:
+      'Shopping muss leider derzeit auf das Internet verlagert werden. Oder auf später, falls du deinen Lieblingsladen unterstützen möchtest.',
+  },
+  doctor: {
+    open: true,
+    Icon: LocalHospitalIcon,
+    text:
+      'Arztpraxen sind regulär geöffnet. Bitte rufe bei Grippe-Symptomen unbedingt vor dem Besuch des Arztes dort an!',
+  },
+  drugstore: {
+    open: true,
+    Icon: LocalPharmacyIcon,
+    text: 'Apotheken sind weiterhin für dich da.',
+  },
+  electrician: {
+    open: true,
+    text: 'Es gibt keine Einschränkungen für Elektriker.',
+  },
+  electronics_store: {
+    open: false,
+    text:
+      'Shopping muss leider derzeit auf das Internet verlagert werden. Oder auf später, falls du deinen Lieblingsladen unterstützen möchtest.',
+  },
+  embassy: {
+    open: true,
+    text:
+      'Die Öffnung oder Schliessung von Botschaften obliegt den jeweiligen Ländern, die sie vertreten. Es sind keine Einschränkungen bekannt.',
+  },
+  fire_station: {
+    open: true,
+    text: 'Die Feuerwehr ist weiterhin für dich da.',
+  },
+  florist: {
+    open: false,
+    text: 'Floristen und Blumenläden sind leider bis auf Weiteres geschlossen.',
+  },
+  funeral_home: {
+    open: true,
+    text: 'Es gibt keine Einschränkungen für Bestattungsunternehmen.',
+  },
+  furniture_store: {
+    open: false,
+    text:
+      'Shopping muss leider derzeit auf das Internet verlagert werden. Oder auf später, falls du deinen Lieblingsladen unterstützen möchtest.',
+  },
+  gas_station: {
+    open: true,
+    Icon: LocalGasStationIcon,
+    text: 'Tankstellen sind weiterhin für dich da.',
+  },
+  grocery_or_supermarket: {
+    open: true,
+    Icon: ShoppingCartIcon,
+    text:
+      'Die Versorgung mit Lebensmitteln und Gütern des alltäglichen Bedarfs wird selbstverständlich weiterhin sicher gestellt. Am Besten du kaufst mit Augenmaß – genügend um nicht morgen erneut einkaufen gehen zu müssen. Es wäre aber schön, wenn du von besonders gefragten Waren auch noch etwas übrig lassen würdest.',
+  },
+  gym: {
+    open: false,
+    text: 'Fitnessstudios und öffentliche Schwimmbäder sind leider derzeit geschlossen.',
+  },
   hair_care: {
     open: false,
     text:
       'Dienstleistungsbetriebe im Bereich der Körperpflege sind wegen erhöhter Ansteckungsgefahr derzeit geschlossen.',
   },
-  hardware_store: { open: true }, // FIXME
-  hindu_temple: { open: false },
-  home_goods_store: { open: true, Icon: ShoppingCartIcon },
-  hospital: { open: true, Icon: LocalHospitalIcon },
-  insurance_agency: { open: null },
-  jewelry_store: { open: false },
-  laundry: { open: null },
-  lawyer: { open: true },
-  library: { open: false },
-  light_rail_station: { open: true },
-  liquor_store: { open: true },
-  local_government_office: { open: true },
-  locksmith: { open: false },
-  lodging: { open: false },
-  meal_delivery: { open: true },
-  meal_takeaway: { open: true },
-  mosque: { open: false },
-  movie_rental: { open: false },
+  hardware_store: {
+    open: null,
+    text:
+      'In Bayern, Mecklenburg-Vorpommern, Niedersachsen und Sachsen sind Baumärkte geschlossen. Es gibt teilweise Aunahmen für die Abholung und für gewerbliche Kunden.',
+  },
+  hindu_temple: {
+    open: false,
+    text: 'Auch in Gotteshäusern sind größere Veranstaltungen zur Zeit leider untersagt.',
+  },
+  home_goods_store: {
+    open: true,
+    Icon: ShoppingCartIcon,
+    text:
+      'Shopping muss leider derzeit auf das Internet verlagert werden. Oder auf später, falls du deinen Lieblingsladen unterstützen möchtest.',
+  },
+  hospital: {
+    open: true,
+    Icon: LocalHospitalIcon,
+    text:
+      "Bitte geh' bei Grippe-Symptomen nicht unangekündigt ins Krankenhaus. Die zentrale Hotline unter 116117 hilft dir weiter, oder im Notfall natürlich auch der Notruf unter 112.",
+  },
+  insurance_agency: {
+    open: null,
+    text:
+      "Viele Versicherungsmakler arbeiten mittlerweile nur noch mit einer kleinen Belegschaft im Büro, oder sind komplett auf Home-Office umgeschwenkt. Ruf' doch kurz an um sicher zu gehen, dass jemand dort sein wird.",
+  },
+  jewelry_store: {
+    open: false,
+    text: 'Eventuell kann dir online weiter geholfen werden, wenn du die Ringröße weißt.',
+  },
+  laundry: {
+    open: true,
+    text: 'Waschsalons stehen weiterhin für dich zur Verfügung.',
+  },
+  lawyer: {
+    open: true,
+    text:
+      "Viele Anwälte arbeiten mittlerweile nur noch mit einer kleinen Belegschaft im Büro, oder sind komplett auf Home-Office umgeschwenkt. Ruf' doch kurz an um sicher zu gehen, dass jemand dort sein wird.",
+  },
+  library: {
+    open: false,
+    text: 'Die meisten Bibliotheken bieten auch ein Online-Angebot.',
+  },
+  light_rail_station: {
+    open: true,
+  },
+  liquor_store: {
+    open: true,
+    text:
+      'Zur Not desinfiziert Alkohol, am effizientesten bei etwa 70% Alkoholgehalt. Am meisten Spaß macht orale Desinfektion.',
+  },
+  local_government_office: {
+    open: true,
+    text:
+      "Die öffentliche Hand und Verwaltung steht weiterhin zu deiner Verfügung. Neuerdings ist allerdings immer mehr auch ohne persönlichen Kontakt möglich, ruf' am Besten kurz an um dein Anliegen zu klären.",
+  },
+  locksmith: {
+    open: false,
+    text:
+      'In der Regel ist es zwar angenehmer zum Schlüsseldienst zu gehen als ihn kommen lassen zu müssen. Ersteres geht aber nun nicht mehr – wobei der Außendienst weiterhin zur Verfügung steht!',
+  },
+  lodging: {
+    open: true,
+    text:
+      'Hotels stehen Geschäftsreisenden weiterhin offen. Aber Vorsicht: Die Nord- und Ostsee-Inseln sind für Tourismus gesperrt, und Bonn hat alle Hotels geschlossen!',
+  },
+  meal_delivery: {
+    open: true,
+    text: 'Kontaktlose Zahlung verringert das Ansteckungsrisiko. Guten Appetit!',
+  },
+  meal_takeaway: {
+    open: true,
+    text:
+      "Restaurants dürfen Speisen zum Mitnehmen anbieten. Die Öffnungszeiten könnten sich geändert haben, ruf' am Besten kurz an.",
+  },
+  mosque: {
+    open: false,
+    text: 'Auch in Gotteshäusern sind größere Veranstaltungen zur Zeit leider untersagt.',
+  },
+  movie_rental: {
+    open: false,
+    text: 'Videotheken müssen geschlossen bleiben.',
+  },
   movie_theater: { open: false },
   moving_company: { open: true },
   museum: { open: false },
