@@ -80,10 +80,10 @@ export default function Index() {
         <Logo />
         <Typography variant="body1" paragraph>
           Rausfinden, wo du im Rahmen der Ausgangsbeschränkungen noch hin kannst und papierlos
-          dokumentieren, wann und warum du deine Wohnung verlässt.
+          dokumentieren, wann und warum du deine Wohnung verlässt.*
         </Typography>
         <Typography variant="body1" paragraph>
-          Der Service funktioniert besser, wenn du ihm erlaubst auf deinen Standort zuzugreifen.*
+          Der Service funktioniert besser, wenn du ihm erlaubst auf deinen Standort zuzugreifen.**
         </Typography>
         {error && (
           <Alert severity="error" className={classes.marginBottom}>
@@ -110,7 +110,11 @@ export default function Index() {
           </Button>
         </Box>
         <Typography variant="body2" color="textSecondary" paragraph>
-          * Es werden dabei Standortdaten an Google Maps Server gesendet. Alle persönlichen Daten
+          * Anders als z.B. in Frankreich ist eine Dokumentation der Gründe, warum man seine Wohnung
+          verlässt, derzeit in Deutschland nicht vorgeschrieben.
+        </Typography>
+        <Typography variant="body2" color="textSecondary" paragraph>
+          ** Es werden dabei Standortdaten an Google Maps Server gesendet. Alle persönlichen Daten
           werden aber nur auf deinem Endgerät gespeichert, und niemals ohne dein Einverständnis an
           Dritte übermittelt.
         </Typography>
