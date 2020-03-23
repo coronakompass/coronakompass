@@ -6,6 +6,7 @@ import { format } from 'date-fns';
 import { de } from 'date-fns/locale';
 import Link from './Link';
 import { LAST_UPDATE } from '../config';
+import logo from '../../images/logo-wirvsvirus.svg';
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -36,7 +37,7 @@ export default function Footer() {
       </Grid>
       <Grid item className={classes.logo} xs={5}>
         <a href="https://wirvsvirushackathon.org/" target="_blank" rel="noopener noreferrer">
-          <img src="/logo-wirvsvirus.svg" alt="#WirVsVirus" />
+          <img src={logo} alt="#WirVsVirus" />
         </a>
       </Grid>
       <Grid item className={classes.lastUpdate} xs={12}>
