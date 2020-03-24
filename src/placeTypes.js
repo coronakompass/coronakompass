@@ -251,7 +251,7 @@ const placeTypes = {
   library: {
     open: false,
     text:
-      'Keine Panik, Leihfristen werden i.d.R. bis zur Wiedereröffnung verlängert, aber guck . Die meisten Bibliotheken bieten auch ein Online-Angebot.  ',
+      'Keine Panik, Leihfristen werden i.d.R. bis zur Wiedereröffnung verlängert. Und die meisten Bibliotheken bieten auch ein Online-Angebot.  ',
   },
   light_rail_station: {
     open: true,
@@ -310,7 +310,7 @@ const placeTypes = {
   },
   night_club: {
     open: false,
-    text: 'Leider nicht.',
+    text: 'Die Party geht online weiter!',
   },
   painter: {
     open: true,
@@ -319,7 +319,7 @@ const placeTypes = {
   park: {
     open: true,
     text:
-      'Parks sind weiterhin zugänglich, Besuche allerdings nur alleine, mit einer weiteren nicht im Haushalt lebenden Person oder im Kreis der Angehörigen des eigenen Hausstands gestattet.',
+      'Parks sind weiterhin zugänglich, besuche allerdings nur alleine, mit einer weiteren nicht im Haushalt lebenden Person oder im Kreis der Angehörigen des eigenen Hausstands gestattet.',
   },
   parking: {
     open: true,
@@ -360,7 +360,7 @@ const placeTypes = {
   },
   real_estate_agency: {
     open: false,
-    text: 'Immobilienmakler bieten ihre Dienste aktuell vor allem über Telefon und Email an.',
+    text: 'Immobilienmakler bieten ihre Dienste aktuell vor allem über Telefon und E-Mail an.',
   },
   restaurant: {
     open: false,
@@ -393,7 +393,7 @@ const placeTypes = {
   shopping_mall: {
     open: false,
     text:
-      'Einkaufszentren haben geschlossen (ausser z.B. Lebensmittelläden und Apotheken), es gibt aber viele Alternativen online.',
+      'Die meisten Läden in Einkaufszentren haben geschlossen (bis auf z.B. Lebensmittelläden und Apotheken), nicht alle Einkaufszentren bleiben daher geöffnet.',
     Icon: ShoppingCartIcon,
   },
   spa: {
@@ -408,7 +408,7 @@ const placeTypes = {
   store: {
     open: false,
     text:
-      'Alle Läden (bis auf z.B. Lebensmittelläden und Apotheken) haben geschlossen, es gibt für vieles aber Alternativen online.',
+      'Shopping muss leider derzeit auf das Internet verlagert werden. Oder auf später, falls du deinen Lieblingsladen unterstützen möchtest.',
     Icon: ShoppingCartIcon,
   },
   subway_station: {
@@ -418,7 +418,8 @@ const placeTypes = {
   },
   supermarket: {
     open: true,
-    text: 'Supermärkte haben weiterhin geöffnet. Bitte kaufe massvoll ein.',
+    text:
+      'Die Versorgung mit Lebensmitteln und Gütern des alltäglichen Bedarfs wird selbstverständlich weiterhin sicher gestellt. Am Besten du kaufst mit Augenmaß – genügend um nicht morgen erneut einkaufen gehen zu müssen. Es wäre aber schön, wenn du von besonders gefragten Waren auch noch etwas übrig lassen würdest.',
     Icon: ShoppingCartIcon,
   },
   synagogue: {
@@ -432,7 +433,7 @@ const placeTypes = {
   },
   tourist_attraction: {
     open: false,
-    text: 'Touristische Sehenswürdigkeiten sind bis auf weiteres geschlossen.',
+    text: 'Touristische Sehenswürdigkeiten sind bis auf Weiteres geschlossen.',
   },
   train_station: {
     open: true,
@@ -452,7 +453,7 @@ const placeTypes = {
   },
   university: {
     open: false,
-    text: 'Alle Universitäten sind bis auf weiteres geschlossen.',
+    text: 'Alle Universitäten sind bis auf Weiteres geschlossen.',
     Icon: SchoolIcon,
   },
   veterinary_care: {
@@ -500,7 +501,7 @@ const placeTypes = {
   country: {
     open: null,
     text:
-      'Viele Staaten haben Einreisebeschränkungen erlassen. Bitte informiere dich auf der Seite des Auswuartigen Amtes.',
+      'Viele Staaten haben Einreisebeschränkungen erlassen. Bitte informiere dich auf der Seite des Auswärtigen Amtes.',
   },
   establishment: {
     open: null,
@@ -571,8 +572,8 @@ const placeTypes = {
   },
   post_box: {
     open: true,
-    text: 'Post wird weiterhin ausgeliefert. Einige Paketshops sind allerdings geschlossen.',
     Icon: LocalPostOfficeIcon,
+    text: 'Post wird weiterhin ausgeliefert. Einige Paketshops sind allerdings geschlossen.',
   },
   postal_code: {
     open: null,
