@@ -1,0 +1,36 @@
+#!/bin/bash -eu
+
+PROJECT=${PROJECT_ID:-covidcompanion}
+
+if [[ -z "${1:-}" ]]
+then
+  echo "Usage: $0 YOU@gmail.com [login]"
+  exit 1
+fi
+EMAIL="${1}"
+
+gcloud components update --quiet
+gcloud components install beta --quiet
+
+if ! gcloud config configurations describe "${PROJECT}" &>/dev/null
+then
+  gcloud config configurations create "${PROJECT}"
+fi
+
+gcloud config configurations activate "${PROJECT}"
+gcloud config set core/account "${EMAIL}"
+
+if [[ "${2:-}" == "login" ]]
+then
+  gcloud auth login
+  gcloud auth application-default login
+fi
+
+gcloud config set core/project "${PROJECT}"
+gcloud config set compute/region europe-west3
+gcloud config set compute/zone europe-west3-b
+
+gcloud config set run/platform managed
+gcloud config set run/region europe-west1
+
+gcloud config set project "${PROJECT}"

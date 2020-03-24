@@ -15,6 +15,12 @@ yarn dev
 
 ## Deployment
 
+### Configure Google Cloud
+
+```
+./bin/setup-gcloud YOU@gmail.com
+```
+
 ### Deploy a new Version
 
 ```
