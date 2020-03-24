@@ -29,7 +29,7 @@ const placeTypes = {
   },
   aquarium: {
     open: false,
-    text: 'Freizeitparks sind leider bis auf Weiteres geschlossen.',
+    text: 'Aquarien sind leider bis auf Weiteres geschlossen.',
   },
   art_gallery: {
     open: false,
