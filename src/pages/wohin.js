@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   placesContent: {
     marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(3),
+    marginBottom: theme.spacing(2),
   },
   grid: {
     marginTop: theme.spacing(2),
@@ -66,16 +66,23 @@ export default function Wohin() {
   return (
     <Container maxWidth="sm">
       <Head>
-        <title>Wohin soll’s gehen? – Corona Kompass</title>
+        <title>Wohin geht’s? – Corona Kompass</title>
       </Head>
       <Box my={2}>
         <Header />
         <Typography variant="h4" component="h1" gutterBottom>
-          Wohin soll’s gehen?
+          Wohin geht’s?
         </Typography>
         <Typography variant="body1" paragraph>
           Jeder gesparte Gang kann Leben retten!
         </Typography>
+        <div className={classes.placesContent}>
+          <GooglePlaces
+            onChange={handleChange}
+            defaultOptions={recentDestinations}
+            label="Dein Ziel"
+          />
+        </div>
         <Typography variant="body1" gutterBottom>
           Es gibt folgende gute Gründe das Haus zu verlassen:
         </Typography>
@@ -92,16 +99,6 @@ export default function Wohin() {
           <Typography component="li">Hilfe für andere</Typography>
         </Typography>
         <AllFacts className={classes.allfacts} />
-        <Typography variant="body1" paragraph>
-          Wohin soll’s gehen?
-        </Typography>
-        <div className={classes.placesContent}>
-          <GooglePlaces
-            onChange={handleChange}
-            defaultOptions={recentDestinations}
-            label="Dein Ziel"
-          />
-        </div>
       </Box>
       <Footer />
     </Container>
