@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
-import CheckIcon from '@material-ui/icons/Check';
 import CallMadeIcon from '@material-ui/icons/CallMade';
-import Typography from '@material-ui/core/Typography';
+import CheckIcon from '@material-ui/icons/Check';
+import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
@@ -180,21 +181,15 @@ export default function Ziel() {
             </Box>
             <Typography variant="body1">
               Die gute Nachricht? Es haben sich kürzlich tausende Menschen überlegt wie man die Zeit
-              zu Hause besser verbringen kann. Da ist bestimmt auch was für dich dabei!
+              zu Hause besser verbringen kann.{' '}
+              <Link
+                href="https://wirvsvirushackathon.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Da ist bestimmt auch was für dich dabei!
+              </Link>
             </Typography>
-            <Grid container justify="flex-end" className={classes.buttonContainer}>
-              <Grid item>
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  href="https://wirvsvirushackathon.org/"
-                  target="_blank"
-                  endIcon={<CallMadeIcon />}
-                >
-                  Mehr Infos
-                </Button>
-              </Grid>
-            </Grid>
             <Grid container justify="flex-end" className={classes.buttonContainer}>
               <Grid item>
                 <Button variant="contained" color="primary" onClick={startNow}>
