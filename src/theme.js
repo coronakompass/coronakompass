@@ -30,6 +30,7 @@ const theme = createMuiTheme({
       dark: '#052211',
     },
     error: {
+      light: '#F9D0D9',
       main: red.A400,
     },
     warning: {
