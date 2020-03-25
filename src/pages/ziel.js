@@ -195,6 +195,13 @@ export default function Ziel() {
                 </Button>
               </Grid>
             </Grid>
+            <Grid container justify="flex-end" className={classes.buttonContainer}>
+              <Grid item>
+                <Button variant="contained" color="primary" onClick={startNow}>
+                  Trotzdem losgehen
+                </Button>
+              </Grid>
+            </Grid>
           </>
         )}
       </Box>
