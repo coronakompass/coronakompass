@@ -92,7 +92,7 @@ export default function Wohin() {
           <Typography component="li">Arztbesuch</Typography>
           <Typography component="li">Einkauf</Typography>
           <Typography component="li">Teilnahme an Sitzungen</Typography>
-          <Typography component="li">Erforderlichen Terminen und Prüfungen</Typography>
+          <Typography component="li">Erforderliche Termine und Prüfungen</Typography>
           <Typography component="li">
             Individueller Sport und Bewegung an der frischen Luft
           </Typography>
