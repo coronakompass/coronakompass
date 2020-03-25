@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { uniqBy } from 'lodash';
 import { useRouter } from 'next/router';
 import AllFacts from '../components/AllFacts';
 import Footer from '../components/Footer';
 import GooglePlaces from '../components/GooglePlaces';
-import Link from '../components/Link';
 import Header from '../components/Header';
 
 const useStyles = makeStyles((theme) => ({
@@ -106,14 +103,6 @@ export default function Wohin() {
           />
         </div>
       </Box>
-
-      <Grid container justify="flex-end" className={classes.grid}>
-        <Grid item>
-          <Button variant="outlined" color="primary" component={Link} href="/info">
-            Mehr Infos
-          </Button>
-        </Grid>
-      </Grid>
       <Footer />
     </Container>
   );

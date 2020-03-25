@@ -5,8 +5,8 @@ import Link from './Link';
 
 export default function Profile() {
   return (
-    <IconButton component={Link} href="/ich">
-      <AccountCircleIcon fontSize="large" />
+    <IconButton component={Link} href="/ich" underline="none">
+      <AccountCircleIcon fontSize="large" color="secondary" />
     </IconButton>
   );
 }

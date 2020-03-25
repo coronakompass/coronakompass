@@ -102,9 +102,9 @@ export default function Index() {
           <Button
             color="primary"
             component={Link}
-            naked
             href="/wohin"
             className={classes.marginBottom}
+            underline="none"
           >
             Weiter ohne Standortfreigabe
           </Button>
