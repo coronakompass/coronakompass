@@ -129,7 +129,7 @@ export default function GooglePlaces({ onChange, label = 'Add a location', defau
       options={options.length ? options : defaultOptions}
       autoComplete
       noOptionsText="Keine passenden Orte gefunden"
-      popupIcon={<SearchIcon />}
+      popupIcon={<SearchIcon color="primary" />}
       includeInputInList
       renderInput={(params) => (
         <TextField {...params} label={label} variant="outlined" fullWidth onChange={handleChange} />
