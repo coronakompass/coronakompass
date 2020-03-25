@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Footer from '../components/Footer';
@@ -16,20 +17,20 @@ export default function Info() {
         <Logo />
         <Typography variant="body1" paragraph>
           Corona Kompass entstand im Rahmen des{' '}
-          <a href="https://wirvsvirushackathon.org/" target="_blank" rel="noopener noreferrer">
+          <Link href="https://wirvsvirushackathon.org/" target="_blank" rel="noopener noreferrer">
             WirVsVirus Hackathons
-          </a>
+          </Link>
           .
         </Typography>
         <Typography variant="body1" paragraph>
           Mit der Einführung von{' '}
-          <a
+          <Link
             href="https://www.bundesregierung.de/breg-de/themen/coronavirus/besprechung-der-bundeskanzlerin-mit-den-regierungschefinnen-und-regierungschefs-der-laender-1733248"
             target="_blank"
             rel="noopener noreferrer"
           >
             Ausgangssperren bzw. Kontaktverboten
-          </a>{' '}
+          </Link>{' '}
           steht die Frage im Raum wie deren Kontrolle umgesetzt werden soll. Eine papierlose Lösung
           ist nicht nur einfach und unbürokratisch, sondern auch kontaktlos und minimiert damit das
           Infektionsrisiko.
@@ -58,13 +59,13 @@ export default function Info() {
         </Typography>
         <Typography variant="body1" paragraph>
           Der Code befindet sich auf{' '}
-          <a
+          <Link
             href="https://github.com/coronakompass/coronakompass"
             target="_blank"
             rel="noopener noreferrer"
           >
             GitHub
-          </a>
+          </Link>
           .
         </Typography>
         <Typography variant="h6" gutterBottom>
@@ -72,13 +73,13 @@ export default function Info() {
         </Typography>
         <Typography variant="body1" paragraph>
           Der Corona-Kompass wird von einem{' '}
-          <a
+          <Link
             href="https://github.com/orgs/coronakompass/people"
             target="_blank"
             rel="noopener noreferrer"
           >
             kleinen Berliner Team
-          </a>{' '}
+          </Link>{' '}
           mit Gründungserfahrung entwickelt, welches in der Vergangenheit bereits erfolgreich
           zusammengearbeitet hat. Datensparsamkeit und Datenschutz standen dabei immer im Fokus der
           Entwicklung. Wir denke zwar gerne weit in die Zukunft und arbeiten immer möglichst
@@ -111,9 +112,9 @@ export default function Info() {
           Kontakt
         </Typography>
         <Typography variant="body1" paragraph>
-          <a href="mailto:coronakompass@gmail.com" target="_blank" rel="noopener noreferrer">
+          <Link href="mailto:coronakompass@gmail.com" target="_blank" rel="noopener noreferrer">
             coronakompass@gmail.com
-          </a>
+          </Link>
         </Typography>
         <Typography variant="h6" gutterBottom>
           Datenschutz
@@ -125,13 +126,13 @@ export default function Info() {
           Die Standortdaten der Nutzer werden von uns nicht aufgezeichnet. Zur Optimierung der Suche
           von Orten und Darstellung der Öffnungszeiten etc. wird auf Google Maps und Google Places
           zurückgegriffen, hierfür gilt{' '}
-          <a
+          <Link
             href="https://policies.google.com/privacy?hl=de"
             target="_blank"
             rel="noopener noreferrer"
           >
             die Datenschutzerklärung von Google
-          </a>
+          </Link>
           .
         </Typography>
       </Box>

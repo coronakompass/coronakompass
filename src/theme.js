@@ -8,6 +8,9 @@ const theme = createMuiTheme({
       size: 'large',
       disableElevation: true,
     },
+    MuiLink: {
+      underline: 'always',
+    },
   },
   palette: {
     primary: {
