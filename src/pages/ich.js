@@ -82,7 +82,9 @@ export default function Wohin() {
           Persönliche Daten
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Für eine „Ausgangssperrenbescheinigung“ benötigen wir noch ein paar Informationen von dir.
+          Eine verbindliche „Ausgangssperrenbescheinigung“ würde noch die untenstehenden
+          Informationen von dir benötigen. Alle hier angegebenen Daten werden nur auf deinem
+          Endgerät gespeichert, und niemals ohne dein Einverständnis an Dritte übermittelt.
         </Typography>
 
         <form noValidate>
@@ -96,7 +98,7 @@ export default function Wohin() {
             <Grid item>
               <TextField
                 label="Name"
-                placeholder="Erika Musterfrau"
+                placeholder="Vorname Nachname"
                 variant="outlined"
                 fullWidth
                 onChange={handleUserInput('name')}
