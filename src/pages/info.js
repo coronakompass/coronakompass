@@ -47,9 +47,9 @@ export default function Info() {
           physische Kontakte zu minimieren.
         </Typography>
         <Typography variant="body1" paragraph>
-          Ist der Zielort z.B. ein Supermarkt wird die Nutzerin oder der Nutzer darauf hingewiesen,
-          wenn sich dort aktuell ungewöhnlich viele Menschen aufhalten. Ist der Zielort temporär
-          geschlossen, z.B. ein Restaurants weist die App ebenfalls darauf hin um unnötige Wege zu
+          Ist der Zielort z.B. ein Supermarkt, wird die Nutzerin oder der Nutzer darauf hingewiesen,
+          falls sich dort aktuell ungewöhnlich viele Menschen aufhalten. Ist der Zielort temporär
+          geschlossen, z.B. ein Restaurant, weist die App ebenfalls darauf hin um unnötige Wege zu
           vermeiden.
         </Typography>
         <Typography variant="body1" paragraph>
@@ -81,9 +81,9 @@ export default function Info() {
           </a>{' '}
           mit Gründungserfahrung entwickelt, welches in der Vergangenheit bereits erfolgreich
           zusammengearbeitet hat. Datensparsamkeit und Datenschutz standen dabei immer im Fokus der
-          Entwicklung. Wir denke zwar gerne weit in die Zukunft und arbeiten immer möglichst
-          vorrausschauend, sind aber dank jahrelanger Startup-Tätigkeit auch routiniert darin die
-          gerade benötigte Lösung schnell auf die Beine zu stellen. Unser weitläufiges Netzwerk
+          Entwicklung. Wir denken zwar gerne weit in die Zukunft und arbeiten immer möglichst
+          vorrausschauend, sind aber dank jahrelanger Startup-Tätigkeit auch routiniert darin nur
+          die gerade benötigte Lösung schnell auf die Beine zu stellen. Unser weitläufiges Netzwerk
           hilft uns dabei.
         </Typography>
         <Typography variant="h6" gutterBottom>
@@ -91,7 +91,7 @@ export default function Info() {
         </Typography>
         <Typography variant="body1" paragraph>
           Das Team steht für die Weiterentwicklung der Web-App und für die Entwicklung von nativen
-          Apps und Erklärvideos zur Verfügung.
+          Apps zur Verfügung.
         </Typography>
         <Typography variant="body1" paragraph>
           Dazu gehören Anpassungen an die aktuell geltende Rechtslage des jeweiligen Bundeslandes
