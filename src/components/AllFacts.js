@@ -5,6 +5,7 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -66,13 +67,13 @@ export default function AllFacts({ className }) {
         <Box>
           <Typography variant="body1" gutterBottom>
             Folgende{' '}
-            <a
+            <Link
               href="https://www.bundesregierung.de/breg-de/themen/coronavirus/besprechung-der-bundeskanzlerin-mit-den-regierungschefinnen-und-regierungschefs-der-laender-1733248"
               target="_blank"
               rel="noopener noreferrer"
             >
               Regeln gelten ab 22. März 2020
-            </a>{' '}
+            </Link>{' '}
             für ganz Deutschland:
           </Typography>
           <Typography component="ul" paragraph>

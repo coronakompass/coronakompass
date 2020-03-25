@@ -3,10 +3,17 @@ import { red } from '@material-ui/core/colors';
 
 // Create a theme instance.
 const theme = createMuiTheme({
-  props: {
-    MuiButton: {
-      size: 'large',
-      disableElevation: true,
+  typography: {
+    h4: {
+      fontFamily: ['Inter', '"Helvetica Neue"', 'Arial', 'sans-serif'].join(','),
+      fontWeight: 800,
+    },
+    h6: {
+      fontFamily: ['Inter', '"Helvetica Neue"', 'Arial', 'sans-serif'].join(','),
+      fontWeight: 600,
+    },
+    button: {
+      textTransform: 'none',
     },
   },
   palette: {
@@ -34,9 +41,13 @@ const theme = createMuiTheme({
       default: '#fff',
     },
   },
-  typography: {
-    button: {
-      textTransform: 'none',
+  props: {
+    MuiButton: {
+      size: 'large',
+      disableElevation: true,
+    },
+    MuiLink: {
+      underline: 'always',
     },
   },
 });
