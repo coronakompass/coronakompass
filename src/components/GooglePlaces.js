@@ -9,18 +9,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { makeStyles } from '@material-ui/core/styles';
 import parse from 'autosuggest-highlight/parse';
 import throttle from 'lodash/throttle';
-
-function loadScript(src, position, id) {
-  if (!position) {
-    return;
-  }
-
-  const script = document.createElement('script');
-  script.setAttribute('async', '');
-  script.setAttribute('id', id);
-  script.src = src;
-  position.appendChild(script);
-}
+import useGoogleMaps from '../hooks/useGoogleMaps';
 
 const autocompleteService = { current: null };
 
@@ -39,19 +28,8 @@ export default function GooglePlaces({ onChange, label = 'Add a location', defau
   const [inputValue, setInputValue] = React.useState('');
   const [options, setOptions] = React.useState([]);
   const [bounds, setBounds] = React.useState();
-  const loaded = React.useRef(false);
 
-  if (typeof window !== 'undefined' && !loaded.current) {
-    if (!document.querySelector('#google-maps')) {
-      loadScript(
-        'https://maps.googleapis.com/maps/api/js?key=AIzaSyBPCJ-2CAlOsWYr5BXrqD6QRFgmgmIx89Y&libraries=places',
-        document.querySelector('head'),
-        'google-maps',
-      );
-    }
-
-    loaded.current = true;
-  }
+  useGoogleMaps();
 
   const handleChange = (event) => {
     setInputValue(event.target.value);

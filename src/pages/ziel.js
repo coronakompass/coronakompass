@@ -18,6 +18,7 @@ import Footer from '../components/Footer';
 import GoogleMap from '../components/GoogleMap';
 import Header from '../components/Header';
 import placeTypes from '../placeTypes';
+import useGoogleMaps from '../hooks/useGoogleMaps';
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -52,10 +53,53 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function getState(details) {
+  if (!details || !details.address_components) {
+    return null;
+  }
+
+  const state = details.address_components.find((component) =>
+    component.types.includes('administrative_area_level_1'),
+  );
+
+  return state;
+}
+
 export default function Ziel() {
   const classes = useStyles();
   const [destination, setDestination] = useState(null);
+  const [details, setDetails] = useState(null);
   const router = useRouter();
+
+  const { map } = useGoogleMaps();
+
+  React.useEffect(() => {
+    if (!map) {
+      return;
+    }
+
+    const request = {
+      placeId: destination.place_id,
+      fields: [
+        'address_component',
+        'formatted_address',
+        'name',
+        'permanently_closed',
+        'formatted_phone_number',
+        'international_phone_number',
+        'opening_hours',
+        'website',
+      ],
+    };
+
+    const service = new window.google.maps.places.PlacesService(map);
+
+    service.getDetails(request, (place, status) => {
+      if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+        setDetails(place);
+      }
+    });
+  }, [map]);
 
   useEffect(() => {
     try {
@@ -81,7 +125,10 @@ export default function Ziel() {
   const primaryType = destination.types[0];
   const status = placeTypes[primaryType];
   const DestinationIcon = status.Icon;
-  console.log('destination', destination, status); // eslint-disable-line
+  console.log('destination', destination, status, details); // eslint-disable-line
+
+  const state = getState(details);
+  console.log('state', state); // eslint-disable-line
 
   return (
     <Container maxWidth="sm">
