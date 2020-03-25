@@ -22,9 +22,6 @@ const useStyles = makeStyles((theme) => ({
   },
   expansionPanelSummaryRoot: {
     padding: 0,
-    '&$expanded': {
-      minHeight: `${theme.spacing(6)}px !important`,
-    },
   },
   expansionPanelDetailsRoot: {
     padding: 0,
