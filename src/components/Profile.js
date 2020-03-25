@@ -6,7 +6,7 @@ import Link from './Link';
 export default function Profile() {
   return (
     <IconButton component={Link} href="/ich" underline="none">
-      <AccountCircleIcon fontSize="large" color="secondary" />
+      <AccountCircleIcon fontSize="large" color="action" />
     </IconButton>
   );
 }
