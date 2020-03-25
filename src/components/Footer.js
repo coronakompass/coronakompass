@@ -31,8 +31,10 @@ export default function Footer() {
   return (
     <Grid container alignItems="center" className={classes.grid}>
       <Grid item xs={7}>
-        <Typography variant="body2" color="textSecondary">
-          <Link href="/info">Info, Kontakt & Datenschutz</Link>
+        <Typography variant="body2">
+          <Link color="textSecondary" href="/info">
+            Info, Kontakt & Datenschutz
+          </Link>
         </Typography>
       </Grid>
       <Grid item className={classes.logo} xs={5}>
